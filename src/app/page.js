@@ -5,6 +5,8 @@ import HeroSection from '../sections/HeroSection';
 import AboutSection from '../sections/AboutSection';
 import ServicesSection from '@/sections/ServiceSection';
 import ReviewsSection from '@/sections/ReviewSection';
+import { PortfolioGallery } from '@/sections/portfolio-gallery';
+import ClientFeedback from '@/sections/ClientFeedback';
 // import ServicesSection from '../components/sections/ServicesSection';
 // import ProcessSection from '../components/sections/ProcessSection';
 // import ReviewsSection from '../components/sections/ReviewsSection';
@@ -16,11 +18,10 @@ export default function HomePage() {
       <HeroSection />
 
       <ServicesSection />
+      <PortfolioGallery />
+      <ClientFeedback />
 
-      <AboutSection />
 
-      <ReviewsSection />
-      
       {/* <ServicesSection />
       
       <ProcessSection />
