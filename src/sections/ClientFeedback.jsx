@@ -69,13 +69,13 @@ function ClientFeedback() {
                     </h2>
                     <p className="">FibreWise Ltd</p>
                   </div>
-                  <img
+                  {/* <img
                     src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?q=80&w=687&auto=format&fit=crop"
                     alt="logo"
                     width={200}
                     height={200}
                     className="w-16 h-16 rounded-xl object-cover"
-                  />
+                  /> */}
                 </div>
               </article>
             </TimelineContent>
@@ -92,13 +92,13 @@ function ClientFeedback() {
                     <h2 className=" font-semibold text-xl">Nelson</h2>
                     <p className="">Weelz</p>
                   </div>
-                  <img
+                  {/* <img
                     src="https://images.unsplash.com/photo-1512485694743-9c9538b4e6e0?q=80&w=687&auto=format&fit=crop"
                     alt="logo"
                     width={200}
                     height={200}
                     className="w-16 h-16 rounded-xl object-cover"
-                  />
+                  /> */}
                 </div>
               </article>
             </TimelineContent>
@@ -118,13 +118,13 @@ function ClientFeedback() {
                     </h2>
                     <p className="lg:text-base text-sm">Digital Hive</p>
                   </div>
-                  <img
+                  {/* <img
                     src="https://images.unsplash.com/photo-1566753323558-f4e0952af115?q=80&w=1021&auto=format&fit=crop"
                     alt="logo"
                     width={200}
                     height={200}
                     className="lg:w-16 lg:h-16 w-12 h-12 rounded-xl object-cover"
-                  />
+                  /> */}
                 </div>
               </article>
             </TimelineContent>
@@ -139,13 +139,13 @@ function ClientFeedback() {
                     <h2 className=" font-semibold lg:text-xl text-lg">GNTC</h2>
                     <p className="lg:text-base text-sm">Florina</p>
                   </div>
-                  <img
+                  {/* <img
                     src="https://images.unsplash.com/photo-1615109398623-88346a601842?q=80&w=687&auto=format&fit=crop"
                     alt="logo"
                     width={200}
                     height={200}
                     className="lg:w-16 lg:h-16 w-12 h-12 rounded-xl object-cover"
-                  />
+                  /> */}
                 </div>
               </article>
             </TimelineContent>
@@ -162,13 +162,13 @@ function ClientFeedback() {
                     </h2>
                     <p className="lg:text-base text-sm">Estimatrix</p>
                   </div>
-                  <img
+                  {/* <img
                     src="https://images.unsplash.com/photo-1740102074295-c13fae3e4f8a?q=80&w=687&auto=format&fit=crop"
                     alt="logo"
                     width={200}
                     height={200}
                     className="lg:w-16 lg:h-16 w-12 h-12 rounded-xl object-cover"
-                  />
+                  /> */}
                 </div>
               </article>
             </TimelineContent>
@@ -185,13 +185,13 @@ function ClientFeedback() {
                     <h2 className=" font-semibold text-xl">John</h2>
                     <p className="">Dominion Group</p>
                   </div>
-                  <img
+                  {/* <img
                     src="https://images.unsplash.com/photo-1563237023-b1e970526dcb?q=80&w=765&auto=format&fit=crop"
                     alt="logo"
                     width={200}
                     height={200}
                     className="w-16 h-16 rounded-xl object-cover"
-                  />
+                  /> */}
                 </div>
               </article>
             </TimelineContent>
@@ -211,13 +211,13 @@ function ClientFeedback() {
                     <h2 className=" font-semibold text-xl">Bcube</h2>
                     <p className="">Trobits</p>
                   </div>
-                  <img
+                  {/* <img
                     src="https://images.unsplash.com/photo-1590086782957-93c06ef21604?q=80&w=687&auto=format&fit=crop"
                     alt="logo"
                     width={200}
                     height={200}
                     className="w-16 h-16 rounded-xl object-cover"
-                  />
+                  /> */}
                 </div>
               </article>
             </TimelineContent>

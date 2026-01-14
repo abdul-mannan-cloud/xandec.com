@@ -23,34 +23,34 @@ export function PortfolioGallery({
 
 const defaultImages = [
   {
-    src: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop&q=80",
+    src: "/pulseMemo.png",
+    title: "PulseMemo",
+    description: "AI-powered note-taking and organization tool.",
+  },
+  {
+    src: "/trobbits.png",
+    title: "Trobbits",
+    description: "Blockchain-based decentralized social media platform.",
+  },
+  {
+    src: "/estimatrixx.png",
     title: "Estimatrix",
     description: "AI-powered construction cost estimation and quoting platform.",
   },
   {
-    src: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop&q=80",
+    src: "/viemaa.png",
+    title: "VIMEA",
+    description: "ecommerce platform for baby products with personalized recommendations.",
+  },
+  {
+    src: "/alex.png",
     title: "Alex Vision",
     description: "Real-time computer vision and voice-based inspection system.",
   },
   {
-    src: "https://images.unsplash.com/photo-1553028826-f4804a6dba3b?w=800&h=600&fit=crop&q=80",
-    title: "NextUp",
-    description: "Campus-focused social and events platform with smart discovery.",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&h=600&fit=crop&q=80",
-    title: "Pliro Comply",
-    description: "Compliance intelligence platform using RAG and vector databases.",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1626785774573-4b799315345d?w=800&h=600&fit=crop&q=80",
-    title: "Weelz",
-    description: "Modern car-rental platform with subscriptions and Stripe billing.",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=600&fit=crop&q=80",
-    title: "Fabcom",
-    description: "Internal operations and team management system for enterprises.",
+    src: "/stepsc.png",
+    title: "StepSC",
+    description: "Web based appointment scheduling and management platform.",
   },
 ]
 

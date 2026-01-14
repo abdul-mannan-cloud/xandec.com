@@ -9,17 +9,17 @@ const teamMembers = [
   {
     name: 'Khizer Tariq',
     title: 'Team Member',
-    imageUrl: '/me.png'
+    imageUrl: '/khizer.png'
   },
   {
     name: 'Zeeshan Ali',
     title: 'Team Member',
-    imageUrl: '/me.png'
+    imageUrl: '/zeeshan.png'
   },
   {
     name: 'Muhammad Awais',
     title: 'Team Member',
-    imageUrl: '/me.png'
+    imageUrl: '/awais.png'
   }
 ];
 
@@ -40,18 +40,50 @@ export default function AboutPage() {
         </div>
 
         <div className="mt-12 grid w-full place-items-center gap-8 md:grid-cols-2 xl:grid-cols-4">
-          {teamMembers.map((member) => (
-            <div key={member.name} className="flex items-center justify-center">
+          <div key={teamMembers[0].name} className="flex items-center justify-center">
               <div className="h-[420px] w-full max-w-[320px]">
                 <EvervaultCard
                   className="rounded-3xl"
-                  imageUrl={member.imageUrl}
-                  title={member.name}
-                  subtitle={member.title}
+                  imageUrl={teamMembers[0].imageUrl}
+                  title={teamMembers[0].name}
+                  subtitle={teamMembers[0].title}
+                  index={0}
                 />
               </div>
             </div>
-          ))}
+            <div key={teamMembers[1].name} className="flex items-center justify-center">
+              <div className="h-[420px] w-full max-w-[320px]">
+                <EvervaultCard
+                  className="rounded-3xl"
+                  imageUrl={teamMembers[1].imageUrl}
+                  title={teamMembers[1].name}
+                  subtitle={teamMembers[1].title}
+                  index={1}
+                />
+              </div>
+            </div>
+            <div key={teamMembers[2].name} className="flex items-center justify-center">
+              <div className="h-[420px] w-full max-w-[320px]">
+                <EvervaultCard
+                  className="rounded-3xl"
+                  imageUrl={teamMembers[2].imageUrl}
+                  title={teamMembers[2].name}
+                  subtitle={teamMembers[2].title}
+                  index={2}
+                />
+              </div>
+            </div>
+            <div key={teamMembers[3].name} className="flex items-center justify-center">
+              <div className="h-[420px] w-full max-w-[320px]">
+                <EvervaultCard
+                  className="rounded-3xl"
+                  imageUrl={teamMembers[3].imageUrl}
+                  title={teamMembers[3].name}
+                  subtitle={teamMembers[3].title}
+                  index={3}
+                />
+              </div>
+            </div>
         </div>
       </div>
     </section>

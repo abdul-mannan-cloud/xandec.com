@@ -9,7 +9,8 @@ export const EvervaultCard = ({
   className,
   imageUrl,
   title,
-  subtitle
+  subtitle,
+  index
 }) => {
   let mouseX = useMotionValue(0);
   let mouseY = useMotionValue(0);
