@@ -20,6 +20,7 @@ const navItems = [
   { name: "About", link: "#about" },
   { name: "Services", link: "#services" },
   { name: "Reviews", link: "#reviews" },
+  { name: "Work", link: "/work" },
 ];
 
 export default function RootLayout({ children }) {

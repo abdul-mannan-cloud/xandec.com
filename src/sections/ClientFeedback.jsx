@@ -25,12 +25,12 @@ function ClientFeedback() {
   }
 
   return (
-    <main className="w-full bg-white">
+    <main className="w-full bg-secondary">
       <section
         ref={testimonialRef}
-        className="relative h-full container mx-auto rounded-lg py-14 bg-white text-black"
+        className="relative h-full container mx-auto rounded-lg py-14 pt-20 bg-secondary text-primary"
       >
-        <article className="max-w-screen-md mx-auto text-center space-y-2">
+        <article className="max-w-screen-md mx-auto text-center  space-y-2">
           <TimelineContent
             as="h1"
             className="xl:text-4xl text-3xl font-medium"
@@ -100,7 +100,7 @@ function ClientFeedback() {
             </TimelineContent>
           </div>
           <div className="lg:h-full  md:flex lg:flex-col h-fit lg:space-y-2 lg:gap-0 gap-2">
-            <TimelineContent animationNum={2} customVariants={revealVariants} timelineRef={testimonialRef} className="flex flex-col justify-between relative bg-[#111111] text-white overflow-hidden rounded-lg border border-gray-200 p-5">
+            <TimelineContent animationNum={2} customVariants={revealVariants} timelineRef={testimonialRef} className="flex flex-col justify-between relative bg-primary text-white overflow-hidden rounded-lg border border-gray-200 p-5">
               <article className="mt-auto">
                 <p className="2xl:text-base text-sm">
                   "Their team is highly professional, and their innovative
@@ -123,7 +123,7 @@ function ClientFeedback() {
                 </div>
               </article>
             </TimelineContent>
-            <TimelineContent animationNum={3} customVariants={revealVariants} timelineRef={testimonialRef} className="flex flex-col justify-between relative bg-[#111111] text-white overflow-hidden rounded-lg border border-gray-200 p-5">
+            <TimelineContent animationNum={3} customVariants={revealVariants} timelineRef={testimonialRef} className="flex flex-col justify-between relative bg-primary text-white overflow-hidden rounded-lg border border-gray-200 p-5">
               <article className="mt-auto">
                 <p className="2xl:text-base text-sm">
                   "We're extremely satisfied with Hypersphere. Their expertise
@@ -144,7 +144,7 @@ function ClientFeedback() {
                 </div>
               </article>
             </TimelineContent>
-            <TimelineContent animationNum={4} customVariants={revealVariants} timelineRef={testimonialRef} className="flex flex-col justify-between relative bg-[#111111] text-white overflow-hidden rounded-lg border border-gray-200 p-5">
+            <TimelineContent animationNum={4} customVariants={revealVariants} timelineRef={testimonialRef} className="flex flex-col justify-between relative bg-primary text-white overflow-hidden rounded-lg border border-gray-200 p-5">
               <article className="mt-auto">
                 <p className="2xl:text-base text-sm">
                   "Their customer support is absolutely exceptional. They are

@@ -6,9 +6,9 @@ import { motion } from "framer-motion"
 import { useState } from "react"
 import Squares from "@/component/Squares"
 export function PortfolioGallery({
-  title = "Browse my library",
+  title = "Browse our Projects",
   archiveButton = {
-    text: "View gallery",
+    text: "Browse gallery",
     href: "/work",
   },
   images: customImages,
@@ -60,32 +60,26 @@ const defaultImages = [
     <section
       aria-label={title}
       id="archives"
-      className={`min-h-screen flex items-center bg-white justify-center bg-secondary"`}
+      className={`min-h-screen flex items-center bg-secondary justify-center bg-secondary"`}
     >
       {/* Content wrapper (matches other sections) */}
-      <div className="min-h-[99vh] min-w-[95vw] relative z-0 bg-white pointer-events-none">
-        <Squares
-            speed={0.3}
-            squareSize={100}
-            direction='diagonal' // up, down, left, right, diagonal
-            borderColor='rgba(135, 135, 16, 0.1)'
-            hoverFillColor='#FFFFFF'
-            className='min-h-[99vh] min-w-[95vw] relative z-0 bg-white'
-        />
-        {/* Header */}
+      <div className="min-h-[99vh] min-w-[95vw] relative z-0 bg-secondary pointer-events-none">
+{/* Header */}
         <div className="absolute top-40 inset-0 z-20 text-center mb-24">
-            <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-8">
+            <h2 className="text-4xl md:text-6xl font-bold text-primary mb-8">
                 {title}
             </h2>
             <Link
                 href={archiveButton.href}
-                className="inline-flex items-center gap-3 rounded-full bg-foreground px-7 py-3 text-background font-medium transition hover:bg-foreground/90 group"
+                className="inline-flex items-center gap-3 rounded-full bg-primary px-7 py-3 text-background font-medium transition hover:bg-foreground/90 group"
             >
                 <span>{archiveButton.text}</span>
                 <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
             </Link>
-            <div className="text-lg text-center max-w-3xl mx-auto mb-16 text-gray-600 mt-10">
-                SBy following these simple steps, you can enhance your storytelling and create more visually appealing stories that will surely impress your followers. Let's get started!
+            <div className="text-lg text-center max-w-3xl mx-auto mb-16 text-primary mt-10">
+                Full-stack products, AI apps, and modern platforms built for real businesses.
+                <br />
+                From MVPs to scale-ups, this is the tech we ship end-to-end.
             </div>
         </div>
 

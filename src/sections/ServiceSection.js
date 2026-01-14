@@ -98,8 +98,8 @@ export default function ServicesSection() {
   ];
 
   return (
-    <section id="services" className="bg-secondary text-primary h-screen relative overflow-hidden">
-      <div className="h-full  mx-auto px-6 sm:px-10 py-16">
+    <section id="services" className="bg-secondary pt-12 text-primary h-screen relative overflow-hidden">
+      <div className="h-full max-w-[1490px] mx-auto px-6 sm:px-10 py-16">
         <div className=" flex justify-between pb-4">
           <div className="lg:col-span-5 max-w-[540px]">
             <motion.p
@@ -185,26 +185,8 @@ export default function ServicesSection() {
           ))}
         </motion.div>
 
-        <div className="mt-6 mb-6 flex justify-center">
-          <svg
-            width="480"
-            height="40"
-            viewBox="0 0 480 40"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            className="w-full text-primary/30"
-          >
-            <path
-              d="M10 20 C 50 5, 90 35, 130 20 C 170 5, 210 35, 250 20 C 290 5, 330 35, 370 20 C 410 5, 450 35, 470 20"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-            />
-          </svg>
-        </div>
-
         <motion.div
-            className="group mt-4 rounded-2xl border border-primary/10 bg-primary p-6 text-secondary transition duration-300 hover:-translate-y-1 hover:border-secondary/40 col-span-full"
+            className="group mt-8 min-h-[10vh] rounded-2xl border border-primary/10 bg-primary p-6 text-secondary transition duration-300 hover:-translate-y-1 hover:border-secondary/40 col-span-full"
             variants={itemVariants}
         >
           <div className="text-xs uppercase tracking-[0.3em] text-secondary/70">

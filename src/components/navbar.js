@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Squares from "@/component/Squares";
 
@@ -7,17 +8,36 @@ const cn = (...classes) => classes.filter(Boolean).join(" ");
 
 export const Navbar = ({ navItems, className, ctaLabel = "Book a Call" }) => {
   const [isHero, setIsHero] = useState(true);
+  const pathname = usePathname();
+  const isAbout = pathname === "/about";
+  const heroTextClass = isAbout ? "text-primary" : "text-secondary";
+  const heroMutedClass = isAbout ? "text-primary/80" : "text-secondary/80";
+  const heroUnderlineClass = isAbout ? "bg-primary/80" : "bg-secondary/80";
+  const heroCtaClass = isAbout
+    ? "border-primary/30 text-primary hover:border-primary hover:bg-primary/10"
+    : "border-secondary/30 text-secondary hover:border-secondary hover:bg-secondary/10";
 
   useEffect(() => {
     const updateNavState = () => {
       const hero = document.getElementById("home");
+      const footer = document.getElementById("footer");
       if (!hero) {
         setIsHero(true);
         return;
       }
 
       const { bottom } = hero.getBoundingClientRect();
-      setIsHero(bottom > 40);
+      const heroVisible = bottom > 40;
+      if (!footer) {
+        setIsHero(heroVisible);
+        return;
+      }
+
+      const footerRect = footer.getBoundingClientRect();
+      const footerRevealPoint = window.innerHeight * 0.15;
+      const footerVisible =
+        footerRect.top <= footerRevealPoint && footerRect.bottom >= footerRevealPoint;
+      setIsHero(heroVisible || footerVisible);
     };
 
     updateNavState();
@@ -49,7 +69,8 @@ export const Navbar = ({ navItems, className, ctaLabel = "Book a Call" }) => {
         <Link
           href="#home"
           className={cn(
-            "text-secondary tracking-[0.2em]",
+            "tracking-[0.2em]",
+            isHero ? heroTextClass : "text-secondary",
             isHero ? "text-xl sm:text-3xl" : "text-lg sm:text-2xl"
           )}
           style={{ fontFamily: "var(--font-anton)" }}
@@ -68,17 +89,29 @@ export const Navbar = ({ navItems, className, ctaLabel = "Book a Call" }) => {
               <Link
                 key={navItem.name}
                 href={navItem.link}
-                className="group relative text-secondary/80 transition-colors hover:text-secondary"
+                className={cn(
+                  "group relative transition-colors",
+                  isHero ? heroMutedClass : "text-secondary/80",
+                  isHero ? `hover:${heroTextClass}` : "hover:text-secondary"
+                )}
               >
                 <span>{navItem.name}</span>
-                <span className="pointer-events-none absolute -bottom-1 left-0 h-[2px] w-full origin-left scale-x-0 bg-secondary/80 transition-transform duration-300 group-hover:scale-x-100" />
+                <span
+                  className={cn(
+                    "pointer-events-none absolute -bottom-1 left-0 h-[2px] w-full origin-left scale-x-0 transition-transform duration-300 group-hover:scale-x-100",
+                    isHero ? heroUnderlineClass : "bg-secondary/80"
+                  )}
+                />
               </Link>
             ))}
           </div>
 
           <Link
             href="#contact"
-            className="rounded-full border border-secondary/30 px-4 py-2 text-sm sm:text-base font-semibold text-secondary transition hover:border-secondary hover:bg-secondary/10"
+            className={cn(
+              "rounded-full border px-4 py-2 text-sm sm:text-base font-semibold transition",
+              isHero ? heroCtaClass : "border-secondary/30 text-secondary hover:border-secondary hover:bg-secondary/10"
+            )}
           >
             {ctaLabel}
           </Link>
