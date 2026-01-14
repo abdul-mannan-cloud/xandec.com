@@ -1,6 +1,7 @@
 "use client"
 
 import { useRef } from "react"
+import { TimelineContent } from "@/components/UI/timeline-animation"
 
 function ClientFeedback() {
   const testimonialRef = useRef(null)
