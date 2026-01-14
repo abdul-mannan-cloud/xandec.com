@@ -10,6 +10,7 @@ export const EvervaultCard = ({
   imageUrl,
   title,
   subtitle,
+  description,
   index
 }) => {
   let mouseX = useMotionValue(0);
@@ -60,6 +61,9 @@ export const EvervaultCard = ({
               <div className="text-base font-semibold text-secondary">{title}</div>
               {subtitle && (
                 <div className="text-xs text-secondary/70">{subtitle}</div>
+              )}
+              {description && (
+                <div className="mt-2 text-xs text-secondary/70">{description}</div>
               )}
             </div>
           </div>

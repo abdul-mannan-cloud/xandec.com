@@ -3,22 +3,26 @@ import { EvervaultCard } from '@/components/UI/evervault-card';
 const teamMembers = [
   {
     name: 'Abdul Mannan',
-    title: 'Team Member',
+    title: 'Core Leader',
+    description: 'Technical lead with a geek-grade obsession for new stacks, systems, and shipping clean architecture.',
     imageUrl: '/me.png'
   },
   {
     name: 'Khizer Tariq',
-    title: 'Team Member',
+    title: 'Core Leader',
+    description: 'Operations and delivery anchor who keeps teams consistent, aligned, and moving without friction.',
     imageUrl: '/khizer.png'
   },
   {
     name: 'Zeeshan Ali',
-    title: 'Team Member',
+    title: 'Core Leader',
+    description: 'Versatile builder who bridges design, dev, and product with a jack-of-all-trades edge.',
     imageUrl: '/zeeshan.png'
   },
   {
     name: 'Muhammad Awais',
-    title: 'Team Member',
+    title: 'Core Leader',
+    description: 'Problem-solver and growth driver who can sell the vision and close with confidence.',
     imageUrl: '/awais.png'
   }
 ];
@@ -47,6 +51,7 @@ export default function AboutPage() {
                   imageUrl={teamMembers[0].imageUrl}
                   title={teamMembers[0].name}
                   subtitle={teamMembers[0].title}
+                  description={teamMembers[0].description}
                   index={0}
                 />
               </div>
@@ -58,6 +63,7 @@ export default function AboutPage() {
                   imageUrl={teamMembers[1].imageUrl}
                   title={teamMembers[1].name}
                   subtitle={teamMembers[1].title}
+                  description={teamMembers[1].description}
                   index={1}
                 />
               </div>
@@ -69,6 +75,7 @@ export default function AboutPage() {
                   imageUrl={teamMembers[2].imageUrl}
                   title={teamMembers[2].name}
                   subtitle={teamMembers[2].title}
+                  description={teamMembers[2].description}
                   index={2}
                 />
               </div>
@@ -80,6 +87,7 @@ export default function AboutPage() {
                   imageUrl={teamMembers[3].imageUrl}
                   title={teamMembers[3].name}
                   subtitle={teamMembers[3].title}
+                  description={teamMembers[3].description}
                   index={3}
                 />
               </div>

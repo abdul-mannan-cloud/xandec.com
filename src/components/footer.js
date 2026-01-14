@@ -8,6 +8,7 @@ export default function Footer() {
   const canvasRef = useRef(null);
   const arenaRef = useRef(null);
   const intervalRef = useRef(null);
+  const focusRef = useRef(null);
   const snakeRef = useRef([]);
   const dirRef = useRef({ x: 1, y: 0 });
   const nextDirRef = useRef({ x: 1, y: 0 });
@@ -16,6 +17,7 @@ export default function Footer() {
   const statusRef = useRef('running');
   const [score, setScore] = useState(0);
   const [status, setStatus] = useState('running');
+  const [isFocused, setIsFocused] = useState(false);
 
   const foodPalette = [
     { label: 'JS', color: '#F4B400' },
@@ -157,60 +159,100 @@ export default function Footer() {
     };
   }, []);
 
-  useEffect(() => {
-    const handleKey = (event) => {
-      if (event.key === ' ') {
-        event.preventDefault();
-        updateStatus((prev) => (prev === 'running' ? 'paused' : 'running'));
-        return;
-      }
-      if (event.key === 'Enter' && statusRef.current === 'over') {
-        resetGame();
-        return;
-      }
+  const handleKey = (event) => {
+    if (!isFocused) return;
+    if (event.key === ' ') {
+      event.preventDefault();
+      updateStatus((prev) => (prev === 'running' ? 'paused' : 'running'));
+      return;
+    }
+    if (event.key === 'Enter' && statusRef.current === 'over') {
+      resetGame();
+      return;
+    }
 
-      const key = event.key.toLowerCase();
-      const next =
-        key === 'arrowup' || key === 'w'
-          ? { x: 0, y: -1 }
-          : key === 'arrowdown' || key === 's'
-            ? { x: 0, y: 1 }
-            : key === 'arrowleft' || key === 'a'
-              ? { x: -1, y: 0 }
-              : key === 'arrowright' || key === 'd'
-                ? { x: 1, y: 0 }
-                : null;
+    const key = event.key.toLowerCase();
+    const next =
+      key === 'arrowup' || key === 'w'
+        ? { x: 0, y: -1 }
+        : key === 'arrowdown' || key === 's'
+          ? { x: 0, y: 1 }
+          : key === 'arrowleft' || key === 'a'
+            ? { x: -1, y: 0 }
+            : key === 'arrowright' || key === 'd'
+              ? { x: 1, y: 0 }
+              : null;
 
-      if (!next) return;
-      const current = dirRef.current;
-      if (current.x + next.x === 0 && current.y + next.y === 0) return;
-      nextDirRef.current = next;
-    };
-
-    window.addEventListener('keydown', handleKey);
-    return () => window.removeEventListener('keydown', handleKey);
-  }, []);
+    if (!next) return;
+    event.preventDefault();
+    const current = dirRef.current;
+    if (current.x + next.x === 0 && current.y + next.y === 0) return;
+    nextDirRef.current = next;
+  };
 
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     message: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [toast, setToast] = useState(null);
+  const toastTimerRef = useRef(null);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log('Contact form submission:', formData);
-    alert('Thanks! We will be in touch within 24 hours.');
-    setFormData({ name: '', email: '', message: '' });
+  const showToast = (nextToast) => {
+    setToast(nextToast);
+    if (toastTimerRef.current) {
+      window.clearTimeout(toastTimerRef.current);
+    }
+    toastTimerRef.current = window.setTimeout(() => {
+      setToast(null);
+    }, 4200);
   };
 
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    if (isSubmitting) return;
+    setIsSubmitting(true);
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      });
+      if (!response.ok) {
+        const data = await response.json().catch(() => ({}));
+        throw new Error(data?.error || 'Message failed to send.');
+      }
+      showToast({
+        type: 'success',
+        message: 'Thanks! Your message has been sent.'
+      });
+      setFormData({ name: '', email: '', message: '' });
+    } catch (error) {
+      showToast({
+        type: 'error',
+        message: error?.message || 'Something went wrong. Try again soon.'
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  useEffect(() => {
+    return () => {
+      if (toastTimerRef.current) {
+        window.clearTimeout(toastTimerRef.current);
+      }
+    };
+  }, []);
+
   return (
-    <footer className="bg-secondary text-primary">
+    <footer id="footer" className="bg-secondary text-primary">
       <div className="min-h-screen flex items-center justify-center  ">
         <div id="contact"  className=" min-h-[98vh] max-w-[99vw]  rounded-[70px] border border-primary/10 bg-primary text-secondary relative overflow-hidden">
           <div className="flex h-full w-full flex-col pt-10 pb-2 sm:px-10 md:px-14 py-12 sm:py-16">
@@ -219,7 +261,24 @@ export default function Footer() {
                 ref={arenaRef}
                 className="relative h-[140px] w-full overflow-hidden rounded-[20px] bg-primary"
               >
-                <canvas ref={canvasRef} className="h-full w-full" />
+                <div
+                  ref={focusRef}
+                  role="application"
+                  tabIndex={0}
+                  aria-label="Snake game. Click to focus, then use arrow keys to play. Press space to pause."
+                  onClick={() => focusRef.current?.focus()}
+                  onFocus={() => setIsFocused(true)}
+                  onBlur={() => setIsFocused(false)}
+                  onKeyDown={handleKey}
+                  className="h-full w-full outline-none"
+                >
+                  <canvas ref={canvasRef} className="h-full w-full" />
+                </div>
+                {!isFocused && (
+                  <div className="pointer-events-none absolute inset-0 flex items-center justify-center text-xs font-semibold uppercase tracking-[0.3em] text-secondary/70">
+                    Click to focus
+                  </div>
+                )}
                 {status !== 'running' && (
                   <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-primary/70 text-sm font-semibold uppercase tracking-[0.3em] text-secondary">
                     {status === 'paused' ? 'Paused' : 'Game Over'}
@@ -264,8 +323,25 @@ export default function Footer() {
 
               <form
                 onSubmit={handleSubmit}
-                className="rounded-[32px] border border-primary/15 bg-secondary p-6 sm:p-8 text-primary"
+                action="/api/contact"
+                method="post"
+                className="relative rounded-[32px] border border-primary/15 bg-secondary p-6 sm:p-8 text-primary"
               >
+                <div
+                  role="status"
+                  aria-live="polite"
+                  className={`pointer-events-none absolute right-6 top-6 rounded-full border px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] transition-all duration-500 ${
+                    toast
+                      ? 'translate-y-0 opacity-100'
+                      : '-translate-y-2 opacity-0'
+                  } ${
+                    toast?.type === 'error'
+                      ? 'border-red-500/30 bg-red-500/15 text-red-700'
+                      : 'border-primary/20 bg-primary text-secondary'
+                  }`}
+                >
+                  {toast?.message || ''}
+                </div>
                   <div className="text-xs uppercase tracking-[0.3em] text-primary/60">
                     Contact Us
                   </div>
@@ -308,9 +384,10 @@ export default function Footer() {
 
                   <button
                     type="submit"
-                    className="mt-6 inline-flex w-full items-center justify-center rounded-full bg-primary px-6 py-3 text-sm sm:text-base font-semibold tracking-wide text-secondary transition hover:bg-primary/90"
+                    disabled={isSubmitting}
+                    className="mt-6 inline-flex w-full items-center justify-center rounded-full bg-primary px-6 py-3 text-sm sm:text-base font-semibold tracking-wide text-secondary transition hover:bg-primary/90 disabled:cursor-not-allowed disabled:opacity-60"
                   >
-                    Send request
+                    {isSubmitting ? 'Sending...' : 'Send request'}
                   </button>
                 </form>
               </div>
