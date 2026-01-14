@@ -10,6 +10,10 @@ export const Navbar = ({ navItems, className, ctaLabel = "Book a Call" }) => {
   const [isHero, setIsHero] = useState(true);
   const pathname = usePathname();
   const isAbout = pathname === "/about";
+  const resolveHref = (href) => {
+    if (!href.startsWith("#")) return href;
+    return pathname === "/" ? href : `/${href}`;
+  };
   const heroTextClass = isAbout ? "text-primary" : "text-secondary";
   const heroMutedClass = isAbout ? "text-primary/80" : "text-secondary/80";
   const heroUnderlineClass = isAbout ? "bg-primary/80" : "bg-secondary/80";
@@ -66,17 +70,21 @@ export const Navbar = ({ navItems, className, ctaLabel = "Book a Call" }) => {
         )}
       >
 
-        <Link
-          href="#home"
-          className={cn(
-            "tracking-[0.2em]",
-            isHero ? heroTextClass : "text-secondary",
-            isHero ? "text-xl sm:text-3xl" : "text-lg sm:text-2xl"
-          )}
-          style={{ fontFamily: "var(--font-anton)" }}
-        >
-          xandec.
-        </Link>
+        {!pathname?.startsWith("/work") ? (
+          <Link
+            href="/"
+            className={cn(
+              "tracking-[0.2em]",
+              isHero ? heroTextClass : "text-secondary",
+              isHero ? "text-xl sm:text-3xl" : "text-lg sm:text-2xl"
+            )}
+            style={{ fontFamily: "var(--font-anton)" }}
+          >
+            xandec.
+          </Link>
+        ) : (
+          <div className="h-8 w-[120px] sm:w-[160px]" aria-hidden="true" />
+        )}
 
         <div className="flex items-center gap-4 sm:gap-6">
           <div
@@ -88,7 +96,7 @@ export const Navbar = ({ navItems, className, ctaLabel = "Book a Call" }) => {
             {navItems.map((navItem) => (
               <Link
                 key={navItem.name}
-                href={navItem.link}
+                href={resolveHref(navItem.link)}
                 className={cn(
                   "group relative transition-colors",
                   isHero ? heroMutedClass : "text-secondary/80",
@@ -107,7 +115,7 @@ export const Navbar = ({ navItems, className, ctaLabel = "Book a Call" }) => {
           </div>
 
           <Link
-            href="#contact"
+            href={resolveHref("#contact")}
             className={cn(
               "rounded-full border px-4 py-2 text-sm sm:text-base font-semibold transition",
               isHero ? heroCtaClass : "border-secondary/30 text-secondary hover:border-secondary hover:bg-secondary/10"

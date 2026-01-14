@@ -210,9 +210,9 @@ export default function Footer() {
   };
 
   return (
-    <footer id="footer" className="bg-secondary text-primary">
+    <footer className="bg-secondary text-primary">
       <div className="min-h-screen flex items-center justify-center  ">
-        <div className=" min-h-[98vh] max-w-[99vw]  rounded-[70px] border border-primary/10 bg-primary text-secondary relative overflow-hidden">
+        <div id="contact"  className=" min-h-[98vh] max-w-[99vw]  rounded-[70px] border border-primary/10 bg-primary text-secondary relative overflow-hidden">
           <div className="flex h-full w-full flex-col pt-10 pb-2 sm:px-10 md:px-14 py-12 sm:py-16">
             <div className="">
               <div
@@ -262,10 +262,10 @@ export default function Footer() {
                   </div>
                 </div>
 
-                <form
-                  onSubmit={handleSubmit}
-                  className="rounded-[32px] border border-primary/15 bg-secondary p-6 sm:p-8 text-primary"
-                >
+              <form
+                onSubmit={handleSubmit}
+                className="rounded-[32px] border border-primary/15 bg-secondary p-6 sm:p-8 text-primary"
+              >
                   <div className="text-xs uppercase tracking-[0.3em] text-primary/60">
                     Contact Us
                   </div>
@@ -316,7 +316,7 @@ export default function Footer() {
               </div>
 
               <div className="mt-12 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-t border-secondary/20 pt-6 text-sm text-secondary/60">
-                <span>© {new Date().getFullYear()} Xandec Studio. All rights reserved.</span>
+                <span>© {new Date().getFullYear()} Xandec. All rights reserved.</span>
                 <div className="flex flex-wrap items-center gap-4">
                   <span>abdul.mannan@xandec.com • +92(317) 5504652</span>
                   <div className="flex items-center gap-3">

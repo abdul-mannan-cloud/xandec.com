@@ -53,12 +53,12 @@ export default function HeroSection() {
                             We partner with companies to design, build, and ship systems that perform in the real world.
                         </p>
                         <div className="mt-8 flex justify-center">
-                            <button
+                            <a
+                                href="/#contact"
                                 className="bg-secondary text-primary px-6 py-3 rounded-full text-sm sm:text-base font-semibold tracking-wide hover:bg-secondary/90 transition"
-                                type="button"
                             >
                                 Start Your Project
-                            </button>
+                            </a>
                         </div>
                     </div>
                 </div>

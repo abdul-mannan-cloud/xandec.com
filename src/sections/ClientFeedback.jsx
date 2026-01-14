@@ -25,12 +25,12 @@ function ClientFeedback() {
   }
 
   return (
-    <main className="w-full bg-secondary">
+    <main id="reviews" className="w-full bg-secondary">
       <section
         ref={testimonialRef}
-        className="relative h-full container mx-auto rounded-lg py-14 pt-20 bg-secondary text-primary"
+        className="relative min-h-screen container mx-auto rounded-lg py-14 pt-20 bg-secondary text-primary"
       >
-        <article className="max-w-screen-md mx-auto text-center  space-y-2">
+        <article className="max-w-screen-md mx-auto text-center pt-10 space-y-2">
           <TimelineContent
             as="h1"
             className="xl:text-4xl text-3xl font-medium"
@@ -38,7 +38,7 @@ function ClientFeedback() {
             customVariants={revealVariants}
             timelineRef={testimonialRef}
           >
-            Trusted by Startups and the worlds's largest companies
+            Trusted by teams shipping real products
           </TimelineContent>
 
           <TimelineContent
@@ -48,7 +48,7 @@ function ClientFeedback() {
             customVariants={revealVariants}
             timelineRef={testimonialRef}
           >
-            Let's hear how hypershpere client's feels about our service
+            Here’s what clients say about working with Xandec.
           </TimelineContent>
         </article>
         <div className="lg:grid lg:grid-cols-3  gap-2 flex flex-col w-full lg:py-10 pt-10 pb-4 lg:px-10 px-4">
@@ -57,15 +57,17 @@ function ClientFeedback() {
               <div className="absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:50px_56px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]"></div>
               <article className="mt-auto">
                 <p>
-                  "Hypersphere has been a game-changer for us. Their service is
-                  top-notch and their team is incredibly responsive."
+                  " It was great working with Xandec. They’re very dedicated and
+                  really persevere through challenges until the job gets done.
+                  Their JavaScript knowledge is solid, and they consistently
+                  stay focused on the project goals."
                 </p>
                 <div className="flex justify-between pt-5">
                   <div>
                     <h2 className=" font-semibold lg:text-xl text-sm">
-                      Guillermo Rauch
+                      Dimitry
                     </h2>
-                    <p className="">CEO of Enigma</p>
+                    <p className="">FibreWise Ltd</p>
                   </div>
                   <img
                     src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?q=80&w=687&auto=format&fit=crop"
@@ -80,13 +82,15 @@ function ClientFeedback() {
             <TimelineContent animationNum={1} customVariants={revealVariants} timelineRef={testimonialRef} className="lg:flex-[3] flex-[4] lg:h-fit  lg:shrink-0 flex flex-col justify-between relative bg-blue-600 text-white overflow-hidden rounded-lg border border-gray-200 p-5">
               <article className="mt-auto">
                 <p>
-                  "We've seen incredible results with Hypersphere. Their
-                  expertise, dedication."
+                  "Xandec brought a sharp product mindset and shipped quickly.
+                  They kept us aligned, moved fast, and delivered results we
+                  could launch with confidence.
+                  "
                 </p>
                 <div className="flex justify-between pt-5">
                   <div>
-                    <h2 className=" font-semibold text-xl">Rika Shinoda</h2>
-                    <p className="">CEO of Kintsugi</p>
+                    <h2 className=" font-semibold text-xl">Nelson</h2>
+                    <p className="">Weelz</p>
                   </div>
                   <img
                     src="https://images.unsplash.com/photo-1512485694743-9c9538b4e6e0?q=80&w=687&auto=format&fit=crop"
@@ -103,15 +107,16 @@ function ClientFeedback() {
             <TimelineContent animationNum={2} customVariants={revealVariants} timelineRef={testimonialRef} className="flex flex-col justify-between relative bg-primary text-white overflow-hidden rounded-lg border border-gray-200 p-5">
               <article className="mt-auto">
                 <p className="2xl:text-base text-sm">
-                  "Their team is highly professional, and their innovative
-                  solutions have truly transformed the way we operate."
+                  "Partnering with Xandec on Stepsc and Vimea was a great
+                  experience. They built products tailored to the Kosovo market,
+                  and the communication was clear throughout."
                 </p>
                 <div className="flex justify-between items-end pt-5">
                   <div>
                     <h2 className=" font-semibold lg:text-xl text-lg">
-                      Reacher{" "}
+                      Daim Hoti
                     </h2>
-                    <p className="lg:text-base text-sm">CEO of OdeaoLabs</p>
+                    <p className="lg:text-base text-sm">Digital Hive</p>
                   </div>
                   <img
                     src="https://images.unsplash.com/photo-1566753323558-f4e0952af115?q=80&w=1021&auto=format&fit=crop"
@@ -126,13 +131,13 @@ function ClientFeedback() {
             <TimelineContent animationNum={3} customVariants={revealVariants} timelineRef={testimonialRef} className="flex flex-col justify-between relative bg-primary text-white overflow-hidden rounded-lg border border-gray-200 p-5">
               <article className="mt-auto">
                 <p className="2xl:text-base text-sm">
-                  "We're extremely satisfied with Hypersphere. Their expertise
-                  and dedication have exceeded our expectations."
+                  "Xandec helped us build products for GNTC, and we’re extremely
+                  satisfied with the results."
                 </p>
                 <div className="flex justify-between items-end pt-5">
                   <div>
-                    <h2 className=" font-semibold lg:text-xl text-lg">John </h2>
-                    <p className="lg:text-base text-sm">CEO of Labsbo</p>
+                    <h2 className=" font-semibold lg:text-xl text-lg">GNTC</h2>
+                    <p className="lg:text-base text-sm">Florina</p>
                   </div>
                   <img
                     src="https://images.unsplash.com/photo-1615109398623-88346a601842?q=80&w=687&auto=format&fit=crop"
@@ -147,15 +152,15 @@ function ClientFeedback() {
             <TimelineContent animationNum={4} customVariants={revealVariants} timelineRef={testimonialRef} className="flex flex-col justify-between relative bg-primary text-white overflow-hidden rounded-lg border border-gray-200 p-5">
               <article className="mt-auto">
                 <p className="2xl:text-base text-sm">
-                  "Their customer support is absolutely exceptional. They are
-                  always available, incredibly helpful."
+                  "Xandec helped us ship AI products and build the core AI tech
+                  behind them. The outcome was strong and production-ready."
                 </p>
                 <div className="flex justify-between items-end pt-5">
                   <div>
                     <h2 className=" font-semibold lg:text-xl text-lg">
-                      Steven Sunny
+                      Brandon
                     </h2>
-                    <p className="lg:text-base text-sm">CEO of boxefi</p>
+                    <p className="lg:text-base text-sm">Estimatrix</p>
                   </div>
                   <img
                     src="https://images.unsplash.com/photo-1740102074295-c13fae3e4f8a?q=80&w=687&auto=format&fit=crop"
@@ -172,12 +177,13 @@ function ClientFeedback() {
             <TimelineContent animationNum={5} customVariants={revealVariants} timelineRef={testimonialRef} className=" lg:flex-[3] flex-[4] flex flex-col justify-between relative bg-blue-600 text-white overflow-hidden rounded-lg border border-gray-200 p-5">
               <article className="mt-auto">
                 <p>
-                  "Hypersphere has been a key partner in our growth journey."
+                  "Xandec did a fantastic job with our AI pipeline and
+                  automations. Everything runs smoothly and reliably."
                 </p>
                 <div className="flex justify-between pt-5">
                   <div>
-                    <h2 className=" font-semibold text-xl">Guillermo Rauch</h2>
-                    <p className="">CEO of OdeaoLabs</p>
+                    <h2 className=" font-semibold text-xl">John</h2>
+                    <p className="">Dominion Group</p>
                   </div>
                   <img
                     src="https://images.unsplash.com/photo-1563237023-b1e970526dcb?q=80&w=765&auto=format&fit=crop"
@@ -193,15 +199,17 @@ function ClientFeedback() {
               <div className="absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:50px_56px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]"></div>
               <article className="mt-auto">
                 <p>
-                  "Hypersphere has been a true game-changer for us. Their
-                  exceptional service, combined with their deep expertise and
-                  commitment to excellence, has made a significant impact on our
-                  business."
+                  "It was great working with Xandec and their team. They handled
+                  the entire mobile app development process with professionalism
+                  and efficiency, from design and implementation to publishing
+                  on the App Store and Play Store. Communication was clear, and
+                  they were always proactive in resolving issues. I’d be happy
+                  to work with them again on future projects."
                 </p>
                 <div className="flex justify-between pt-5">
                   <div>
-                    <h2 className=" font-semibold text-xl">Paul Brauch</h2>
-                    <p className="">CTO of Spectrum</p>
+                    <h2 className=" font-semibold text-xl">Bcube</h2>
+                    <p className="">Trobits</p>
                   </div>
                   <img
                     src="https://images.unsplash.com/photo-1590086782957-93c06ef21604?q=80&w=687&auto=format&fit=crop"

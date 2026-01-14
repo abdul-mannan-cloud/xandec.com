@@ -65,7 +65,7 @@ const defaultImages = [
       {/* Content wrapper (matches other sections) */}
       <div className="min-h-[99vh] min-w-[95vw] relative z-0 bg-secondary pointer-events-none">
 {/* Header */}
-        <div className="absolute top-40 inset-0 z-20 text-center mb-24">
+        <div className="absolute top-40 inset-0 z-20 text-center mb-24 pointer-events-auto">
             <h2 className="text-4xl md:text-6xl font-bold text-primary mb-8">
                 {title}
             </h2>
