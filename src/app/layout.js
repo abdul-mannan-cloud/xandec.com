@@ -1,7 +1,7 @@
 import './globals.css';
 import { Anton, Plus_Jakarta_Sans } from 'next/font/google';
-import { Navbar } from '../components/navbar';
-import Footer from '../components/Footer';
+import { Navbar } from '@/components/navbar';
+import Footer from '@/components/Footer';
 import ScrollToTop from '../components/ScrollToTop';
 
 const plusJakartaSans = Plus_Jakarta_Sans({ subsets: ['latin'] });
