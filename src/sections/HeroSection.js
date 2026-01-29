@@ -18,25 +18,25 @@ export default function HeroSection() {
     return (
         <section
             id="home"
-            className="min-h-screen flex items-center justify-center bg-secondary"
+            className="min-h-screen flex items-center justify-center bg-primary sm:bg-secondary"
         >
             <div className="">
 
             </div>
-            <div className="bg-primary min-h-[99vh] w-[98vw] rounded-[70px] relative overflow-hidden">
+            <div className="bg-primary min-h-screen w-screen rounded-none sm:min-h-[99vh] sm:w-[98vw] sm:rounded-[70px] relative overflow-hidden">
                 <Squares
                     speed={0.3}
                     squareSize={100}
                     direction='diagonal' // up, down, left, right, diagonal
                     borderColor='rgba(230, 230, 221, 0.1)'
                     hoverFillColor='#071b2d'
-                    className='min-h-[99vh] min-w-[95vw] relative z-0'
+                    className='min-h-screen min-w-screen sm:min-h-[99vh] sm:min-w-[95vw] relative z-0'
                 />
 
                 <div className="absolute inset-0 z-20 flex items-center justify-center px-6 mb-20 sm:px-10">
                     <div className="max-w-3xl text-center -translate-y-4 sm:-translate-y-6">
                         <div className="flex flex-col items-center gap-3 text-secondary">
-                            <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
+                            <div className="text-3xl leading-[1.35] sm:text-4xl sm:leading-[1.1]  md:text-5xl lg:text-6xl">
                                 <LayoutTextFlip
                                     text="Engineering Team That Drives"
                                     words={[
@@ -68,7 +68,7 @@ export default function HeroSection() {
                         These are some of the global clients that we are working with
                     </div>
                     <Marquee className="mt-0 sm:mt-0">
-                        <div className="flex w-screen items-center justify-between gap-12 px-12">
+                        <div className="flex w-screen items-center justify-between gap-6 px-6 sm:gap-12 sm:px-12">
                             {marqueeImages.map((src) => (
                                 src.includes("pliro") ?
                                     <img
@@ -77,7 +77,7 @@ export default function HeroSection() {
                                         alt=""
                                         width={320}
                                         height={120}
-                                        className={`w-auto object-contain opacity-90 h-20"`}
+                                        className={`w-auto object-contain opacity-90 h-10 sm:h-20`}
                                     /> : (
                                         src.includes("1.jpg") ?
                                             <img
@@ -86,7 +86,7 @@ export default function HeroSection() {
                                                 alt=""
                                                 width={320}
                                                 height={120}
-                                                className={`w-auto object-contain opacity-90 h-16`}
+                                                className={`w-auto object-contain opacity-90 h-8 sm:h-16`}
                                             /> :
                                             <img
                                                 key={src}
@@ -94,7 +94,7 @@ export default function HeroSection() {
                                                 alt=""
                                                 width={320}
                                                 height={120}
-                                                className={`w-auto object-contain opacity-90 h-20`}
+                                                className={`w-auto object-contain opacity-90 h-10 sm:h-20`}
                                             />
                                     )
 

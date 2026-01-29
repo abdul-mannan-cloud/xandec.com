@@ -8,6 +8,7 @@ const cn = (...classes) => classes.filter(Boolean).join(" ");
 
 export const Navbar = ({ navItems, className, ctaLabel = "Book a Call" }) => {
   const [isHero, setIsHero] = useState(true);
+  const [isMobileOpen, setIsMobileOpen] = useState(false);
   const pathname = usePathname();
   const isAbout = pathname === "/about";
   const resolveHref = (href) => {
@@ -54,6 +55,10 @@ export const Navbar = ({ navItems, className, ctaLabel = "Book a Call" }) => {
     };
   }, []);
 
+  useEffect(() => {
+    setIsMobileOpen(false);
+  }, [pathname]);
+
   return (
     <nav
       className={cn(
@@ -61,7 +66,6 @@ export const Navbar = ({ navItems, className, ctaLabel = "Book a Call" }) => {
         className
       )}
     >
-
       <div
         className={cn(
           "mx-auto flex w-[92vw] items-center justify-between transition-all duration-300",
@@ -69,7 +73,6 @@ export const Navbar = ({ navItems, className, ctaLabel = "Book a Call" }) => {
             "w-[92vw] max-w-5xl rounded-full border border-secondary/10 bg-primary px-5 py-3 shadow-[0_10px_30px_rgba(0,0,0,0.25)] backdrop-blur"
         )}
       >
-
         {!pathname?.startsWith("/work") ? (
           <Link
             href="/"
@@ -86,7 +89,7 @@ export const Navbar = ({ navItems, className, ctaLabel = "Book a Call" }) => {
           <div className="h-8 w-[120px] sm:w-[160px]" aria-hidden="true" />
         )}
 
-        <div className="flex items-center gap-4 sm:gap-6">
+        <div className="hidden items-center gap-4 sm:flex sm:gap-6">
           <div
             className={cn(
               "flex items-center gap-4 sm:gap-6",
@@ -119,6 +122,60 @@ export const Navbar = ({ navItems, className, ctaLabel = "Book a Call" }) => {
             className={cn(
               "rounded-full border px-4 py-2 text-sm sm:text-base font-semibold transition",
               isHero ? heroCtaClass : "border-secondary/30 text-secondary hover:border-secondary hover:bg-secondary/10"
+            )}
+          >
+            {ctaLabel}
+          </Link>
+        </div>
+
+        <button
+          type="button"
+          aria-label={isMobileOpen ? "Close menu" : "Open menu"}
+          aria-expanded={isMobileOpen}
+          onClick={() => setIsMobileOpen((open) => !open)}
+          className={cn(
+            "flex flex-col items-center justify-center rounded-full border px-3 py-2 text-sm font-semibold transition sm:hidden",
+            isHero
+              ? heroCtaClass
+              : "border-secondary/30 text-secondary hover:border-secondary hover:bg-secondary/10"
+          )}
+        >
+          <span className="sr-only">Toggle menu</span>
+          <span className="block h-[2px] w-5 bg-current" />
+          <span className={cn("block h-[2px] w-5 bg-current transition", isMobileOpen ? "mt-0" : "mt-1.5")} />
+        </button>
+      </div>
+
+      <div
+        className={cn(
+          "mx-auto mt-3 w-[92vw] overflow-hidden rounded-2xl border border-secondary/10 bg-primary/95 shadow-[0_10px_30px_rgba(0,0,0,0.25)] backdrop-blur transition-all duration-300 sm:hidden",
+          isMobileOpen ? "max-h-[500px] py-4" : "max-h-0 py-0"
+        )}
+      >
+        <div className="flex flex-col gap-4 px-5">
+          {navItems.map((navItem) => (
+            <Link
+              key={navItem.name}
+              href={resolveHref(navItem.link)}
+              onClick={() => setIsMobileOpen(false)}
+              className={cn(
+                "text-base font-medium transition-colors",
+                isHero ? heroMutedClass : "text-secondary/80",
+                isHero ? `hover:${heroTextClass}` : "hover:text-secondary"
+              )}
+            >
+              {navItem.name}
+            </Link>
+          ))}
+
+          <Link
+            href={resolveHref("#contact")}
+            onClick={() => setIsMobileOpen(false)}
+            className={cn(
+              "rounded-full border px-4 py-2 text-center text-sm font-semibold transition",
+              isHero
+                ? heroCtaClass
+                : "border-secondary/30 text-secondary hover:border-secondary hover:bg-secondary/10"
             )}
           >
             {ctaLabel}

@@ -253,13 +253,13 @@ export default function Footer() {
 
   return (
     <footer id="footer" className="bg-secondary text-primary">
-      <div className="min-h-screen flex items-center justify-center  ">
-        <div id="contact"  className=" min-h-[98vh] max-w-[99vw]  rounded-[70px] border border-primary/10 bg-primary text-secondary relative overflow-hidden">
-          <div className="flex h-full w-full flex-col pt-10 pb-2 sm:px-10 md:px-14 py-12 sm:py-16">
-            <div className="">
+      <div className="min-h-screen flex items-center justify-center">
+        <div id="contact" className="min-h-screen w-[100vw]  rounded-none border-0 bg-primary text-secondary relative overflow-hidden sm:min-h-[98vh] sm:rounded-[70px] ">
+          <div className="flex h-full w-full flex-col px-6 pt-10 pb-2 sm:px-10 md:px-14 py-12 sm:py-16">
+            <div className="sm:rounded-[20px] sm:bg-primary">
               <div
                 ref={arenaRef}
-                className="relative h-[140px] w-full overflow-hidden rounded-[20px] bg-primary"
+                className="relative h-[140px] w-full overflow-hidden rounded-[20px] bg-primary sm:mt-0"
               >
                 <div
                   ref={focusRef}
@@ -304,7 +304,7 @@ export default function Footer() {
                     <div className="text-xs uppercase tracking-[0.3em] text-secondary/60">
                       Navigate
                     </div>
-                    <div className="mt-4 grid grid-cols-2 gap-3 text-base">
+                  <div className="mt-4 grid grid-cols-2 gap-3 text-base">
                       <Link href="#services" className="transition hover:text-secondary/80">
                         Services
                       </Link>
@@ -325,7 +325,7 @@ export default function Footer() {
                 onSubmit={handleSubmit}
                 action="/api/contact"
                 method="post"
-                className="relative rounded-[32px] border border-primary/15 bg-secondary p-6 sm:p-8 text-primary"
+                className="relative rounded-[24px] sm:rounded-[32px] border border-primary/15 bg-secondary p-5 sm:p-8 text-primary"
               >
                 <div
                   role="status"
@@ -395,7 +395,7 @@ export default function Footer() {
               <div className="mt-12 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-t border-secondary/20 pt-6 text-sm text-secondary/60">
                 <span>© {new Date().getFullYear()} Xandec. All rights reserved.</span>
                 <div className="flex flex-wrap items-center gap-4">
-                  <span>abdul.mannan@xandec.com • +92(317) 5504652</span>
+                  <span className="leading-relaxed">abdul.mannan@xandec.com • +92(317) 5504652</span>
                   <div className="flex items-center gap-3">
                     <a
                       href="https://instagram.com"

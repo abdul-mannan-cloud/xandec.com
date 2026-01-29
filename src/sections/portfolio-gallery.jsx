@@ -55,6 +55,9 @@ const defaultImages = [
 ]
 
   const images = customImages || defaultImages
+  const splitIndex = Math.ceil(images.length / 2)
+  const firstRowImages = images.slice(0, splitIndex)
+  const secondRowImages = images.slice(splitIndex)
 
   return (
     <section
@@ -65,8 +68,8 @@ const defaultImages = [
       {/* Content wrapper (matches other sections) */}
       <div className="min-h-[99vh] min-w-[95vw] relative z-0 bg-secondary pointer-events-none">
 {/* Header */}
-        <div className="absolute top-40 inset-0 z-20 text-center mb-24 pointer-events-auto">
-            <h2 className="text-4xl md:text-6xl font-bold text-primary mb-8">
+        <div className="relative z-20 text-center mb-10 px-6 pointer-events-auto md:absolute md:top-40 md:inset-x-0 md:mb-24 md:px-0">
+            <h2 className="mt-24 md:mt-0 text-4xl md:text-6xl font-bold text-primary mb-8">
                 {title}
             </h2>
             <Link
@@ -76,7 +79,7 @@ const defaultImages = [
                 <span>{archiveButton.text}</span>
                 <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
             </Link>
-            <div className="text-lg text-center max-w-3xl mx-auto mb-16 text-primary mt-10">
+            <div className="text-lg text-center max-w-3xl mx-auto mb-8 md:mb-16 text-primary mt-10">
                 Full-stack products, AI apps, and modern platforms built for real businesses.
                 <br />
                 From MVPs to scale-ups, this is the tech we ship end-to-end.
@@ -150,30 +153,57 @@ const defaultImages = [
         </div>
 
         {/* Mobile Marquee */}
-        <div className="md:hidden">
-          <div className="flex overflow-hidden gap-4 [--duration:40s]">
-            {Array(marqueeRepeat)
-              .fill(0)
-              .map((_, i) => (
-                <div
-                  key={i}
-                  className={`flex shrink-0 gap-4 animate-marquee ${
-                    pauseOnHover ? "group-hover:[animation-play-state:paused]" : ""
-                  }`}
-                >
-                  {images.map((image, index) => (
-                    <div key={`${i}-${index}`} className="w-64 shrink-0">
-                      <div className="aspect-video overflow-hidden rounded-xl shadow-lg">
-                        <img
-                          src={image.src}
-                          alt={image.alt}
-                          className="h-full w-full object-cover"
-                        />
+        <div className="md:hidden pb-8">
+          <div className="flex flex-col gap-6 overflow-hidden [--duration:40s]">
+            <div className="flex overflow-hidden gap-4">
+              {Array(marqueeRepeat)
+                .fill(0)
+                .map((_, i) => (
+                  <div
+                    key={`row-1-${i}`}
+                    className={`flex shrink-0 gap-4 animate-marquee ${
+                      pauseOnHover ? "group-hover:[animation-play-state:paused]" : ""
+                    }`}
+                  >
+                    {firstRowImages.map((image, index) => (
+                      <div key={`row-1-${i}-${index}`} className="w-64 shrink-0">
+                        <div className="aspect-video overflow-hidden rounded-xl shadow-lg">
+                          <img
+                            src={image.src}
+                            alt={image.alt}
+                            className="h-full w-full object-cover"
+                          />
+                        </div>
                       </div>
-                    </div>
-                  ))}
-                </div>
-              ))}
+                    ))}
+                  </div>
+                ))}
+            </div>
+            <div className="flex overflow-hidden gap-4">
+              {Array(marqueeRepeat)
+                .fill(0)
+                .map((_, i) => (
+                  <div
+                    key={`row-2-${i}`}
+                    className={`flex shrink-0 gap-4 animate-marquee ${
+                      pauseOnHover ? "group-hover:[animation-play-state:paused]" : ""
+                    }`}
+                    style={{ animationDirection: "reverse" }}
+                  >
+                    {secondRowImages.map((image, index) => (
+                      <div key={`row-2-${i}-${index}`} className="w-64 shrink-0">
+                        <div className="aspect-video overflow-hidden rounded-xl shadow-lg">
+                          <img
+                            src={image.src}
+                            alt={image.alt}
+                            className="h-full w-full object-cover"
+                          />
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                ))}
+            </div>
           </div>
         </div>
       </div>

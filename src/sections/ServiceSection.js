@@ -90,6 +90,7 @@ export default function ServicesSection() {
         "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='0.16'/%3E%3C/svg%3E\")";
 
     const horizontalServicesCards = horizontalServices.slice(0, 4);
+    const allServices = [...services, ...horizontalServices];
     const techStack = [
         "React",
         "Next.js",
@@ -110,9 +111,67 @@ export default function ServicesSection() {
     ];
 
     return (
-        <section id="services" className="bg-secondary pt-12 text-primary h-screen relative overflow-hidden">
+        <section id="services" className="bg-secondary pt-12 text-primary relative overflow-hidden sm:h-screen">
             <div className="h-full max-w-[1490px] mx-auto px-6 sm:px-10 py-16">
-                <div className=" flex justify-between pb-4">
+                <div className="sm:hidden">
+                    <div className="max-w-[540px]">
+                        <p className="text-xs uppercase tracking-[0.35em] text-primary/70">
+                            Services
+                        </p>
+                        <h2 className="mt-5 text-3xl font-semibold">
+                            Full-spectrum tech services for teams that ship fast and scale clean.
+                        </h2>
+                        <p className="mt-5 text-base text-primary/80 leading-relaxed">
+                            We cover the common needs and the tricky edge cases. Bring any problem and
+                            we will solve it with the right team, tools, and timelines.
+                        </p>
+                    </div>
+
+                    <div className="mt-6 overflow-x-auto pb-2">
+                        <div className="flex gap-4 snap-x snap-mandatory">
+                            {allServices.map((service, index) => (
+                                <div
+                                    key={`${service.title}-${index}`}
+                                    className="group min-w-[240px] max-w-[260px] snap-start rounded-2xl border border-primary/10 p-5"
+                                    style={{
+                                        backgroundImage: `${accentGradients[index % accentGradients.length]}, ${noiseBg}`
+                                    }}
+                                >
+                                    <div className="mb-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-primary/70">
+                                        {service.title}
+                                    </div>
+                                    <p className="text-xs text-primary/80 leading-relaxed">
+                                        {service.description}
+                                    </p>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+
+                    <div className="mt-8 rounded-2xl border border-primary/10 bg-primary p-6 text-secondary">
+                        <div className="text-xs uppercase tracking-[0.3em] text-secondary/70">
+                            Bring Any Problem
+                        </div>
+                        <h3 className="mt-3 text-2xl font-semibold">
+                            If it is tech, we can build it.
+                        </h3>
+                        <p className="mt-4 text-sm text-secondary/80 leading-relaxed">
+                            Tell us the challenge and we will map the fastest path to a working solution.
+                            Book a call and we will scope, plan, and ship with you.
+                        </p>
+                        <div className="mt-6">
+                            <Link
+                                href="/#contact"
+                                className="inline-flex items-center justify-center rounded-full bg-secondary px-5 py-2 text-sm font-semibold tracking-wide text-primary transition hover:bg-secondary/90"
+                            >
+                                Book a Call
+                            </Link>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="hidden sm:block">
+                    <div className=" flex justify-between pb-4">
                     <div className="lg:col-span-5 max-w-[540px]">
                         <motion.p
                             initial={{opacity: 0, y: 10}}
@@ -236,6 +295,7 @@ export default function ServicesSection() {
                         </Link>
                     </div>
                 </motion.div>
+                </div>
             </div>
         </section>
     );
