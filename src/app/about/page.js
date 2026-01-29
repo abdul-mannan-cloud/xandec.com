@@ -36,7 +36,7 @@ export default function AboutPage() {
             About Us
           </p>
           <h1 className="mt-4 text-4xl font-semibold sm:text-5xl">
-            Meet the team behind Xandec.
+            Meet the team behind xandec.
           </h1>
           <p className="mt-4 text-base text-primary/70 sm:text-lg">
             Four builders focused on shipping reliable, scalable products.
