@@ -148,11 +148,11 @@ export const Navbar = ({ navItems, className, ctaLabel = "Book a Call" }) => {
 
       <div
         className={cn(
-          "mx-auto mt-3 w-[92vw] overflow-hidden rounded-2xl border border-secondary/10 bg-primary/95 shadow-[0_10px_30px_rgba(0,0,0,0.25)] backdrop-blur transition-all duration-300 sm:hidden",
-          isMobileOpen ? "max-h-[500px] py-4" : "max-h-0 py-0"
+          "mx-auto mt-3 w-[92vw] overflow-hidden rounded-2xl   shadow-[0_10px_30px_rgba(0,0,0,0.25)] backdrop-blur transition-all duration-300 sm:hidden",
+          isMobileOpen ? "max-h-[500px] py-4 bg-primary/95" : "max-h-0 py-0"
         )}
       >
-        <div className="flex flex-col gap-4 px-5">
+        <div className="flex flex-col gap-4 px-5 ">
           {navItems.map((navItem) => (
             <Link
               key={navItem.name}
