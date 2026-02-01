@@ -252,9 +252,9 @@ export default function Footer() {
   }, []);
 
   return (
-    <footer id="footer" className="bg-secondary text-primary">
+    <footer id="footer" className="bg-secondary text-primary ">
       <div className="min-h-screen flex items-center justify-center">
-        <div id="contact" className="min-h-screen w-[100vw]  rounded-none border-0 bg-primary text-secondary relative overflow-hidden sm:min-h-[98vh] sm:rounded-[70px] ">
+        <div id="contact" className="min-h-screen w-[100vw]  rounded-none border-0 bg-primary text-secondary relative overflow-hidden sm:min-h-[99vh] sm:w-[98vw] sm:rounded-[70px]">
           <div className="flex h-full w-full flex-col px-6 pt-10 pb-2 sm:px-10 md:px-14 py-12 sm:py-16">
             <div className="sm:rounded-[20px] sm:bg-primary">
               <div
@@ -299,12 +299,81 @@ export default function Footer() {
                       Explore our work or tell us what you want to ship next.
                     </p>
                   </div>
+                  <form
+                    onSubmit={handleSubmit}
+                    action="/api/contact"
+                    method="post"
+                    className="relative block mt-5 lg:hidden rounded-[24px] sm:rounded-[32px] border border-primary/15 bg-secondary p-5 sm:p-8 text-primary"
+                  >
+                    <div
+                      role="status"
+                      aria-live="polite"
+                      className={`pointer-events-none absolute right-6 top-6 rounded-full border px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] transition-all duration-500 ${
+                        toast
+                          ? 'translate-y-0 opacity-100'
+                          : '-translate-y-2 opacity-0'
+                      } ${
+                        toast?.type === 'error'
+                          ? 'border-red-500/30 bg-red-500/15 text-red-700'
+                          : 'border-primary/20 bg-primary text-secondary'
+                      }`}
+                    >
+                      {toast?.message || ''}
+                    </div>
+                      <div className="text-xs uppercase tracking-[0.3em] text-primary/60">
+                        Contact Us
+                      </div>
+                      <h3 className="mt-3 text-2xl sm:text-3xl font-semibold">
+                        Tell us about your product.
+                      </h3>
+                      <p className="mt-3 text-sm sm:text-base text-primary/70">
+                        Share a brief and we will respond with scope, timeline, and next steps.
+                      </p>
+
+                      <div className="mt-6 space-y-4">
+                        <input
+                          type="text"
+                          name="name"
+                          value={formData.name}
+                          onChange={handleChange}
+                          placeholder="Name"
+                          required
+                          className="w-full rounded-xl border border-primary/25 bg-primary/5 px-4 py-3 text-primary placeholder:text-primary/50 focus:outline-none focus:ring-2 focus:ring-primary/40"
+                        />
+                        <input
+                          type="email"
+                          name="email"
+                          value={formData.email}
+                          onChange={handleChange}
+                          placeholder="Email"
+                          required
+                          className="w-full rounded-xl border border-primary/25 bg-primary/5 px-4 py-3 text-primary placeholder:text-primary/50 focus:outline-none focus:ring-2 focus:ring-primary/40"
+                        />
+                        <textarea
+                          name="message"
+                          value={formData.message}
+                          onChange={handleChange}
+                          placeholder="Project details"
+                          rows={4}
+                          required
+                          className="w-full rounded-xl border border-primary/25 bg-primary/5 px-4 py-3 text-primary placeholder:text-primary/50 focus:outline-none focus:ring-2 focus:ring-primary/40 resize-none"
+                        />
+                      </div>
+
+                      <button
+                        type="submit"
+                        disabled={isSubmitting}
+                        className="mt-6 inline-flex w-full items-center justify-center rounded-full bg-primary px-6 py-3 text-sm sm:text-base font-semibold tracking-wide text-secondary transition hover:bg-primary/90 disabled:cursor-not-allowed disabled:opacity-60"
+                      >
+                        {isSubmitting ? 'Sending...' : 'Send request'}
+                      </button>
+                    </form>
 
                   <div className="mt-10">
                     <div className="text-xs uppercase tracking-[0.3em] text-secondary/60">
                       Navigate
                     </div>
-                  <div className="mt-4 grid grid-cols-2 gap-3 text-base">
+                    <div className="mt-4 grid grid-cols-2 gap-3 text-base">
                       <Link href="#services" className="transition hover:text-secondary/80">
                         Services
                       </Link>
@@ -319,13 +388,42 @@ export default function Footer() {
                       </Link>
                     </div>
                   </div>
+                  <div className="items-center">
+                    <div className="text-xs mt-5 lg:mt-0 uppercase tracking-[0.3em] text-secondary/60">
+                      Contact
+                    </div>
+                    <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-3 text-base">
+                      <span className="leading-relaxed">abdul.mannan@xandec.com</span>
+                      <span className='leading-relaxed'>+92(317) 5504652</span>
+                      <div className="flex items-center gap-3">
+                        <a
+                          href="https://instagram.com"
+                          target="_blank"
+                          rel="noreferrer"
+                          aria-label="Instagram"
+                          className="text-secondary/70 transition hover:text-secondary"
+                        >
+                          <Instagram className="h-4 w-4" />
+                        </a>
+                        <a
+                          href="https://linkedin.com"
+                          target="_blank"
+                          rel="noreferrer"
+                          aria-label="LinkedIn"
+                          className="text-secondary/70 transition hover:text-secondary"
+                        >
+                          <Linkedin className="h-4 w-4" />
+                        </a>
+                      </div>
+                    </div>
+                  </div>
                 </div>
 
               <form
                 onSubmit={handleSubmit}
                 action="/api/contact"
                 method="post"
-                className="relative rounded-[24px] sm:rounded-[32px] border border-primary/15 bg-secondary p-5 sm:p-8 text-primary"
+                className="relative hidden lg:block rounded-[24px] sm:rounded-[32px] border border-primary/15 bg-secondary p-5 sm:p-8 text-primary"
               >
                 <div
                   role="status"
@@ -391,34 +489,10 @@ export default function Footer() {
                   </button>
                 </form>
               </div>
-
-              <div className="mt-12 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-t border-secondary/20 pt-6 text-sm text-secondary/60">
-                <span>© {new Date().getFullYear()} Xandec. All rights reserved.</span>
-                <div className="flex flex-wrap items-center gap-4">
-                  <span className="leading-relaxed">abdul.mannan@xandec.com • +92(317) 5504652</span>
-                  <div className="flex items-center gap-3">
-                    <a
-                      href="https://instagram.com"
-                      target="_blank"
-                      rel="noreferrer"
-                      aria-label="Instagram"
-                      className="text-secondary/70 transition hover:text-secondary"
-                    >
-                      <Instagram className="h-4 w-4" />
-                    </a>
-                    <a
-                      href="https://linkedin.com"
-                      target="_blank"
-                      rel="noreferrer"
-                      aria-label="LinkedIn"
-                      className="text-secondary/70 transition hover:text-secondary"
-                    >
-                      <Linkedin className="h-4 w-4" />
-                    </a>
-                  </div>
-                </div>
-              </div>
             </div>
+          </div>
+          <div className="mt-0 lg:mt-12 flex flex-col sm:flex-row items-center justify-center mx-5 sm:mx-10 lg:mx-16 gap-4 border-t border-secondary/20 py-2 text-center text-sm text-secondary/60">
+            <span>© {new Date().getFullYear()} Xandec. All rights reserved.</span>
           </div>
         </div>
       </div>
