@@ -16,7 +16,6 @@ export default function HomePage() {
       <div className="snap-section">
         <HeroSection />
       </div>
-
       <div className="snap-section">
         <ServicesSection />
       </div>
