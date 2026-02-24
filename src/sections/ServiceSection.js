@@ -68,7 +68,7 @@ export default function ServicesSection() {
         "/estimatrix.png",
         "/gntc.png",
         "/oxyhelp.png",
-        "/pliro.png",
+        "/dominion.png",
         "/pspc.png",
         "/vimea.png",
         "/weelz.png",
