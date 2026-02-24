@@ -8,7 +8,7 @@ export default function HeroSection() {
         "/estimatrix.png",
         "/gntc.png",
         "/oxyhelp.png",
-        "/pliro.png",
+        "/dominion.png",
         "/pspc.png",
         "/vimea.png",
         "/weelz.png",
