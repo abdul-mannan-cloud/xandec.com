@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
-import { Instagram, Linkedin } from 'lucide-react';
+import { Linkedin } from 'lucide-react';
 
 export default function Footer() {
   const canvasRef = useRef(null);
@@ -369,50 +369,54 @@ export default function Footer() {
                       </button>
                     </form>
 
-                  <div className="mt-10">
-                    <div className="text-xs uppercase tracking-[0.3em] text-secondary/60">
-                      Navigate
+                  <div className="mt-10 grid gap-8 md:grid-cols-2">
+                    <div>
+                      <div className="text-xs uppercase tracking-[0.3em] text-secondary/60">
+                        Navigate
+                      </div>
+                      <div className="mt-4 grid grid-cols-1 gap-3 text-base">
+                        <Link href="#services" className="transition hover:text-secondary/80">
+                          Services
+                        </Link>
+                        <Link href="#archives" className="transition hover:text-secondary/80">
+                          Work
+                        </Link>
+                        <Link href="#process" className="transition hover:text-secondary/80">
+                          Process
+                        </Link>
+                        <Link href="#contact" className="transition hover:text-secondary/80">
+                          Contact
+                        </Link>
+                      </div>
                     </div>
-                    <div className="mt-4 grid grid-cols-2 gap-3 text-base">
-                      <Link href="#services" className="transition hover:text-secondary/80">
-                        Services
-                      </Link>
-                      <Link href="#archives" className="transition hover:text-secondary/80">
-                        Work
-                      </Link>
-                      <Link href="#process" className="transition hover:text-secondary/80">
-                        Process
-                      </Link>
-                      <Link href="#contact" className="transition hover:text-secondary/80">
+
+                    <div>
+                      <div className="text-xs uppercase tracking-[0.3em] text-secondary/60">
                         Contact
-                      </Link>
-                    </div>
-                  </div>
-                  <div className="items-center">
-                    <div className="text-xs mt-5 lg:mt-0 uppercase tracking-[0.3em] text-secondary/60">
-                      Contact
-                    </div>
-                    <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-3 text-base">
-                      <span className="leading-relaxed">abdul.mannan@xandec.com</span>
-                      <span className='leading-relaxed'>+92(317) 5504652</span>
-                      <div className="flex items-center gap-3">
+                      </div>
+                      <div className="mt-4 space-y-4 text-base">
+                        <span className="block leading-relaxed">abdul.mannan@xandec.com</span>
                         <a
-                          href="https://instagram.com"
+                          href="https://www.google.com/maps/search/?api=1&query=Pakland+City+Center+I-8+Markaz+Islamabad+Pakistan"
                           target="_blank"
                           rel="noreferrer"
-                          aria-label="Instagram"
-                          className="text-secondary/70 transition hover:text-secondary"
+                          className="block leading-relaxed text-secondary/80 transition hover:text-secondary"
+                          aria-label="Open office location in Google Maps"
                         >
-                          <Instagram className="h-4 w-4" />
+                          <div>Pakistan</div>
+                          <div>Pakland City Center</div>
+                          <div>I-8 Markaz</div>
+                          <div>Islamabad, Pakistan</div>
+                          <div>+92-333-517577</div>
                         </a>
                         <a
-                          href="https://linkedin.com"
+                          href="https://www.linkedin.com/company/99998887/admin/dashboard"
                           target="_blank"
                           rel="noreferrer"
-                          aria-label="LinkedIn"
-                          className="text-secondary/70 transition hover:text-secondary"
+                          className="inline-flex items-center gap-2 text-secondary/70 transition hover:text-secondary"
                         >
                           <Linkedin className="h-4 w-4" />
+                          <span>LinkedIn</span>
                         </a>
                       </div>
                     </div>
