@@ -397,17 +397,17 @@ export default function Footer() {
                       <div className="mt-4 space-y-4 text-base">
                         <span className="block leading-relaxed">abdul.mannan@xandec.com</span>
                         <a
-                          href="https://www.google.com/maps/search/?api=1&query=Pakland+City+Center+I-8+Markaz+Islamabad+Pakistan"
+                          href="https://www.google.com/maps/search/?api=1&query=F-10+Markaz+Islamabad+Pakistan"
                           target="_blank"
                           rel="noreferrer"
                           className="block leading-relaxed text-secondary/80 transition hover:text-secondary"
                           aria-label="Open office location in Google Maps"
                         >
                           <div>Pakistan</div>
-                          <div>Pakland City Center</div>
-                          <div>I-8 Markaz</div>
+                          <div>Jamal Plaza</div>
+                          <div>F-10 Markaz</div>
                           <div>Islamabad, Pakistan</div>
-                          <div>+92-333-517577</div>
+                          <div>+92-31y-5504652</div>
                         </a>
                         <a
                           href="https://www.linkedin.com/company/99998887/admin/dashboard"
