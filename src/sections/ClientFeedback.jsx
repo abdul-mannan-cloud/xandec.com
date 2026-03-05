@@ -181,8 +181,8 @@ function ClientFeedback() {
                 </p>
                 <div className="flex justify-between pt-5">
                   <div>
-                    <h2 className=" font-semibold text-xl">John</h2>
-                    <p className="">Dominion Group</p>
+                    <h2 className=" font-semibold text-xl">Abdul Hannan</h2>
+                    <p className="">The Masters</p>
                   </div>
                   {/* <img
                     src="https://images.unsplash.com/photo-1563237023-b1e970526dcb?q=80&w=765&auto=format&fit=crop"
