@@ -1,0 +1,141 @@
+﻿MASTER OPERATIONAL & ACCOUNTING RESOURCE GUIDE
+Headquarters: 1029 N Calvert St, Baltimore, MD 21202
+Portfolio Scope: ~1,000 Residential Rental Units, Active Commercial/Multifamily Developments, and Captive Insurance Operations.
+1. Systems Architecture & Internal Controls
+Review this section first to understand the layout of our files, sub-ledgers, and mandatory monthly reconciliation cycles.
+The portfolio uses separate software platforms for different business functions. Because these platforms act as independent sub-ledgers, the accounting team must use manual and systematic checkpoints daily to keep records aligned.
+* Property Management / Tenant Ledgers: AppFolio. Every rental entity and individual asset owner is set up as an active owner account within the system to track rental distributions, tenant accounts receivable, and operational maintenance.
+* Construction Job Costing / Project Management: Buildertrend. Every project, substantial rehab, and turnover is tracked as an independent job.
+* Fixed Assets / Tax Depreciation: Bloomberg Tax Fixed Assets (BNA). Note: The internal accounting team maintains and logs all depreciation entries in BNA directly, rather than outsourcing them to our CPA.
+* Operational Middleware (The Gap-Filler): Podio. Podio handles the operational workflows and compliance records that AppFolio and Buildertrend do not capture. Accountants will look into specific Podio workspaces for:
+   * Acquisitions & Titles Workspace: Settlement statements (ALTA/HUD-1s) used by the Controller to establish cost basis in BNA.
+   * Compliance & Licensing Workspace: Active MDE Lead Paint Certificates and rental licenses used by Staff Accountants to validate municipal invoice approvals.
+The Accounting Ledger Environment
+* Current State: QuickBooks Desktop. Every single entity that files a tax return operates out of its own independent QuickBooks Desktop company file. Because files are completely isolated, all intercompany transfers and Due To/Due From balances must be completely cleared and zeroed out monthly via bank transfer.
+* Target State (2026 Migration): The team is currently migrating to Sage. Sage will centralize the portfolio into a single database with a unified Chart of Accounts and automated intercompany balancing.
+* Capital Accounts / Preferential Returns: Calculated and booked exactly once per year (1x/yr). The Controller tracks the 8% accrued preferred returns on a master offline spreadsheet, allocates profits up to that threshold, and applies excess percentages before pushing the annual adjusting journals to the ledgers.
+* External Debt Payments: Paid directly out of individual Parent Entity or Property LLC bank accounts shortly after receiving the net monthly NOI checks from DM. Debt service does not clear out of the main DM or DP operational accounts.
+2. Master Entity Matrix & Cash Flow Archetypes
+This section outlines the baseline expectations for each company's financial performance based on its current operational status.
+(Note: Dominion Financial Services LLC, Magen Capital Group Inc, and DFS3 are documented here to provide full corporate context but are outside the scope of this Controller position.)
+Operational & Management Entities (The Engine)
+* Dominion Management LLC ("DM")
+   * Structure & Tax: MD LLC | Files Tax Return | YES Payroll
+   * Core Purpose: Property management of residential real estate located in Maryland. Manages ~1,000 units (~950 partner-owned, ~50 third-party turnkey rentals from 2009-2011). No other third-party management.
+   * Target Baseline: Operates at roughly breakeven given its fee structure; the goal is to remain slightly profitable.
+* Dominion Properties LLC ("DP")
+   * Structure & Tax: MD LLC | Files Tax Return | YES Payroll
+   * Core Purpose: Real estate development, construction management, and house flipping. Buys, renovates, and sells to homeowners; acts as General Contractor for all sister entities.
+   * Target Baseline: Expected to be consistently slightly cash flow positive.
+Single-Family Rental (SFR) Holding Entities
+* Charm City Real Estate LLC ("CC") | Red Door Holdings LLC ("RD") | Calvert Street Properties LLC ("CS")
+   * Structure & Tax: DE LLC Parents / Multiple Wholly Owned Sub-LLCs | Consolidated Tax Return (Parent Files) | No Payroll
+   * Core Purpose: Parent entities own subsidiary title-holding LLCs to isolate legal liability. These portfolios contain the properties owned the longest.
+   * Target Baseline: Mature / Static. We are not buying any more properties into these entities. The objective is to pay down debt, maximize NOI, and generate strong monthly positive cash flow.
+* Dominion Rental Holdings LLC ("DRH") | Gunpowder Realty LLC ("Gunpowder")
+   * Structure & Tax: DE LLC (Holds title directly) | Files Tax Return | No Payroll
+   * Core Purpose: Own single-family rental properties directly. Universal ownership structure.
+   * Target Baseline: Stabilized / Full. No new purchases are being made into these entities. Financial performance should remain stabilized and cash flow positive monthly.
+* Emerson Point LLC ("EP")
+   * Structure & Tax: DE LLC (Holds title directly) | Files Tax Return | No Payroll
+   * Core Purpose: Owns newly acquired single-family rental properties.
+   * OWNERSHIP EXCEPTION: No Trust involvement. Fred Lewis holds 80% (all Class A Voting); Jack BeVier holds 20% (Class B Non-Voting).
+   * Target Baseline: Growth Phase. This is the active entity for new rental acquisitions. It will run cash flow negative temporarily until net rental income builds up above the soft costs of stabilizing incoming properties.
+Multifamily Asset Entities
+* 219-237 Park Ave LLC ("Park")
+   * Structure: DE LLC | Files Tax Return | No Payroll | Universal Ownership.
+   * Current Status: 45-unit building. Construction recently finished; currently leasing up.
+   * Target Baseline: In stabilization phase. Currently not cash flow positive but expected to be before the end of 2026.
+* 901-903 Woodson Ave LLC ("Woodson")
+   * Structure: DE LLC | Files its own single Tax Return | No Payroll. Owned by 3 distinct Delaware LLCs acting as Tenants in Common (TICs).
+   * Current Status: 20-unit building. Purchased 2 years ago; fire rebuild completed, currently leasing up.
+   * Target Baseline: In stabilization phase. Expected to be cash flow positive before the end of 2026.
+* 6001 Park Heights Ave LLC ("Park Heights")
+   * Structure: DE LLC | Files its own single Tax Return | No Payroll. Owned by 3 distinct Delaware LLCs acting as Tenants in Common (TICs).
+   * Current Status: 28-unit building. Purchased 2 years ago; major CapEx completed, currently leasing up.
+   * Target Baseline: In stabilization phase. Expected to be cash flow positive before the end of 2026.
+* 400 N Howard LLC ("Howard")
+   * Structure: DE LLC | Files Tax Return | No Payroll | Universal Ownership.
+   * Current Status: 14-unit building currently under construction. Features local CHAP and federal historic tax credits.
+   * Target Baseline: Construction phase. Negative cash flow by design until delivery and stabilization.
+Accounting Directive for Woodson & Park Heights:
+While the underlying ownership structure involves 3 TIC Delaware LLCs, the property operations are fully consolidated. Staff Accountants will maintain a single QuickBooks Desktop file (and eventually a single entity ledger in Sage) for Woodson and a single file for Park Heights. The property-level entities file their own standalone tax returns. The Controller will handle the pro-rata allocations to the underlying TIC holding LLCs via the annual capital account and distribution reconciliations.
+Specialized Entities
+* Dominion Insurance Inc ("DI")
+   * Structure & Tax: DE C-Corp | Files Tax Return | No Payroll
+   * Core Purpose: Regulated 831(b) captive insurance company. Insures specific internal risks (deductibles, lead paint, business interruption, and mortgage insurance to DFS/Magen).
+   * Target Baseline: Consistently profitable.
+   * Investment Subsidiary: Owns Dominion Financial Services 3 LLC ("DFS3") as an investment vehicle. DFS3 owns RTL loans purchased from DFS. (DFS3 accounting is completely outside the scope/purview of this position).
+3. Executive Summary & Core Mission
+Founded in 2002 by Fred Lewis, the portfolio consists of an integrated real estate business specializing in property management, development, construction, and rental operations primarily within Maryland.
+The corporate structure uses distinct legal entities to isolate operational and construction liabilities, protect single-asset real estate investments, and manage tax and insurance requirements.
+The Universal Ownership Blueprint
+With the exception of Emerson Point LLC, every entity in this portfolio shares the exact same equity and economic structure:
+* Fred Lewis: 1% Class A Voting Member (Holds 100% of decision-making authority)
+* The Lewis Family Trust: 79% Class A Non-Voting Member
+* Jack BeVier: 20% Class B Non-Voting Member
+Critical Accounting Directive: The economic interest of all ownership classes is identical. All capital accounts accrue an 8% preferred return first. Excess profits are then apportioned strictly based on ownership percentage (79% / 20% / 1%), regardless of voting status.
+4. Key Personnel & Operational Leadership Chart
+The accounting department interfaces daily with the following department heads who authorize and generate the operational data backing our financials.
+A. The Shared Field Engine
+* James Stewart — Director of Field Operations
+   * The Role: Oversees all Project Managers (PMs) within Dominion Properties (DP) and directs the overarching field operations for Dominion Management (DM).
+   * Accounting Intersection: Primary operational point of contact for the Controller. Validates high-level operational handoffs between construction and management, signs off on major field resource allocations, and ensures project timelines align with budget and cash flow forecasting.
+B. Dominion Properties (DP) — Development, Construction & Acquisitions
+* Brian Leibowitz — Acquisitions Director
+   * The Role: Sources and secures new real estate assets for the portfolio.
+* Victoria Robinson — Transaction Coordinator
+   * The Role: Manages the contract-to-close logistics for all property acquisitions and dispositions.
+   * Accounting Intersection: Populates the Property Acquisition Workspace in Podio. Victoria provides the accounting team with final settlement statements (ALTA/HUD-1s), deeds, and closing cost breakdowns so initial asset basis can be logged in BNA software.
+* Project Managers (Report to James Stewart)
+   * The Role: Manage individual job sites, subcontracted labor, and material drop compliance tracked in Buildertrend.
+   * Accounting Intersection: PMs approve subcontractor field invoices and verify that jobs correspond to open scopes in the field, creating the operational validation before the Friday ACH labor and supplier runs.
+C. Dominion Management (DM) — Property Management & Portfolio Operations
+* Craig Cuocci — Director of DM Maintenance & Inspections
+   * The Role: Oversees the field maintenance crews, property inspectors, and the 6 in-house punch-out/turnover contractors. Craig commands the physical transition of a unit when it goes vacant to get it rent-ready again.
+   * Accounting Intersection: Reconciles turnover labor metrics and material costs. Staff Accountants coordinate with Craig's tracking to determine whether turnover bills are routed as operating expenses under DM (AppFolio) or capitalized under DP.
+* Stephanie Derry — Director of DM Leasing & Compliance
+   * The Role: Manages all tenant leasing pipelines, tenant accounts receivable (AR), and municipal/state regulatory compliance (MDE lead paint certs, Section 8/voucher processing, and annual rental licensing).
+   * Accounting Intersection: Stephanie’s team drives the revenue side of AppFolio (rent rolls and security deposit escrow tracking). Staff Accountants cross-reference Stephanie's Compliance Podio Workspace to verify and approve municipal licensing fee invoices.
+5. Intercompany & Operational Financial Workflows
+This section outlines the rules governing how money, fees, and allocations move between the operational companies and the asset holders.
+A. Property Management Revenue & Cash Flows (DM)
+* The Relationship: Governed by formal, market-rate, arm's-length Property Management Agreements (PMAs) between DM and each property-owning entity.
+* The Cash Flow Sequence:
+   1. All tenant rental income across the entire 1,000-unit portfolio is deposited directly into DM's accounts.
+   2. DM pays all day-to-day property-level operating expenses (repairs, maintenance, turn costs) out of its centralized operational accounts.
+   3. Monthly, DM reconciles property-level performance and distributes Net Operating Income (NOI)—net of management fees and operating expenses—directly to the owners.
+* Banking Access Rules:
+   * Each Rental Parent Entity maintains its own funded bank account to receive monthly NOI distributions and directly pay its own Property Taxes and Insurance bills.
+   * Subsidiary Title-Holding LLCs do NOT have bank accounts. Their cash flows clear completely through DM, with final NOI distributed to the Parent Entity bank accounts.
+   * Woodson and Park Heights LLCs receive their monthly NOI distributions directly from DM into their respective property-level bank accounts.
+B. Construction Management & Overhead Allocation (DP)
+DP charges an overhead allocation to recover corporate labor and administrative costs for all development, rehabs, and turnovers.
+* The Allocation Method: A master internal spreadsheet tracks DP's monthly corporate overhead. At month-end, the overhead is apportioned based on the amount spent in hard costs on each specific property.
+* The Property Ownership LLC Ledger: Because the underlying TICs do not maintain separate sets of books, the allocated overhead is billed and applied directly to the Property Ownership LLC level (e.g., 901-903 Woodson Ave LLC or 6001 Park Heights Ave LLC).
+* The Accounting Treatment: This overhead allocation MUST be capitalized by the property ownership LLC (added to Construction in Progress / asset basis), rather than expensed.
+C. The Property Lifecycle & Internal Contractor Labor
+* Initial Renovations: Performed by DP before a property is placed in service. All labor and material costs are tracked in Buildertrend and fully capitalized. Once complete, the property is turned over to DM for leasing and added to the BNA depreciation software.
+* Turnover Work: When a property goes vacant, DP manages the turnover using 6 in-house contractors to keep labor costs down and limit carrier costs. This turnover labor and material cost is typically routed as an operating repair/maintenance expense under DM's management ledger rather than capitalized.
+6. Procurement, Accounts Payable, & Cash Disbursements
+To maintain consistent relationships with crews and vendors, the accounting team operates on a rapid cash disbursement calendar. Manual checks are being phased out in favor of 100% ACH enrollment.
+* Material Procurement Control: DP acts as a General Contractor, subcontracting labor but purchasing its own materials directly from suppliers to eliminate markup. Staff Accountants cross-reference material supplier invoices with Buildertrend job logs to ensure materials match the authorized scope before payment. There are strict operational safeguards in place to validate that the correct materials are purchased and applied to the correct Dominion jobs.
+* Subcontractor Material Nuances: Subcontractors only supply materials when it is standard and cost-effective (e.g., electricians buy their own wire, HVAC companies buy their own air handlers). Otherwise, DP buys the materials to control costs.
+The AP Disbursement Calendar
+* Material Suppliers: Paid within 7 days of invoice receipt via rolling weekly payments, regardless of supplier credit lines.
+* Labor & Subcontractors: Paid on a strict Net 5 basis. Invoices submitted by Monday morning at 9:00 AM are paid that same Friday afternoon via ACH.
+7. Specialized Entities & Capital Projects
+A. Dominion Insurance Inc ("DI") Captive Accounting
+* Billing Cycle: Calculated and collected annually (1x/yr).
+* The Workflow: DI calculates annual premium allocations and issues formal, individual invoices directly to each asset-owning parent entity or property LLC.
+* Accounting Treatment: Staff Accountants must book the invoice as an insurance expense on the respective property-owning entity ledger. Payment is made from the Parent/Property bank account directly to DI.
+B. 400 N Howard LLC — Historic Tax Credits (CHAP & Federal)
+* Current Status: Credits have not yet been issued.
+* Controller Directive: Because this is the portfolio's first historic tax credit project, the Controller will establish the tracking framework. The primary objective during construction is tracking Qualified Rehabilitation Expenditures (QREs).
+* Staff Accountant Directive: All construction costs for 400 N Howard must be categorized clearly. Ensure that DP’s capitalized overhead and hard costs are coded with enough granularity to separate qualifying historic structural work from non-qualifying costs (such as new additions or specific site work), as this dictates the final credit calculation.
+8. Tax Compliance & CPA Directory
+The internal accounting team provides fully reconciled books, BNA depreciation schedules, and preferential return calculations as back-up to our external CPA firm, who handles final return preparation.
+* CPA Firm: CohnReznick LLP (Baltimore Office)
+* Lead Partner Contact: Garrett Wells
+* Associate Contact: Stella Ye
+* Year-End Deliverables Package: At the close of the fiscal year, the Controller is responsible for delivering a clean package to CohnReznick. This must include reconciled, locked year-end trial balances, finalized BNA Depreciation Schedules matching the book balances, the year-end master spreadsheet calculating the 8% Preferred Return, and intercompany clearing confirmations proving all balances are zero.

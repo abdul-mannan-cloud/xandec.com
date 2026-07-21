@@ -1,0 +1,10 @@
+{
+  "/_not-found/page": "/_not-found",
+  "/favicon.ico/route": "/favicon.ico",
+  "/api/contact/route": "/api/contact",
+  "/case-studies/dominion-group/opengraph-image/route": "/case-studies/dominion-group/opengraph-image",
+  "/about/page": "/about",
+  "/page": "/",
+  "/work/page": "/work",
+  "/case-studies/dominion-group/page": "/case-studies/dominion-group"
+}

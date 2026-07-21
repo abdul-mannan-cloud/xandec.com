@@ -23,34 +23,47 @@ export function PortfolioGallery({
 
 const defaultImages = [
   {
+    src: "/dominion.png",
+    title: "The Dominion Group",
+    description: "Organization-wide AI deployment across property management and financial services.",
+    alt: "The Dominion Group case study cover",
+    href: "/case-studies/dominion-group",
+  },
+  {
     src: "/pulseMemo.png",
     title: "PulseMemo",
     description: "AI-powered note-taking and organization tool.",
+    alt: "PulseMemo project cover",
   },
   {
     src: "/trobbits.png",
     title: "Trobbits",
     description: "Blockchain-based decentralized social media platform.",
+    alt: "Trobbits project cover",
   },
   {
     src: "/estimatrixx.png",
     title: "Estimatrix",
     description: "AI-powered construction cost estimation and quoting platform.",
+    alt: "Estimatrix project cover",
   },
   {
     src: "/viemaa.png",
     title: "VIMEA",
     description: "ecommerce platform for baby products with personalized recommendations.",
+    alt: "VIMEA project cover",
   },
   {
     src: "/alex.png",
     title: "Alex Vision",
     description: "Real-time computer vision and voice-based inspection system.",
+    alt: "Alex Vision project cover",
   },
   {
     src: "/stepsc.png",
     title: "StepSC",
     description: "Web based appointment scheduling and management platform.",
+    alt: "StepSC project cover",
   },
 ]
 
@@ -143,6 +156,14 @@ const defaultImages = [
                                     <p className="mt-2 text-sm lg:text-base text-white/80 max-w-[90%]">
                                     {image.description}
                                     </p>
+                                    {image.href ? (
+                                      <a
+                                        href={image.href}
+                                        className="mt-4 inline-flex w-fit items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-medium text-white transition hover:bg-white/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/30"
+                                      >
+                                        Open case study
+                                      </a>
+                                    ) : null}
                                 </div>
                             </div>
                         </motion.div>
