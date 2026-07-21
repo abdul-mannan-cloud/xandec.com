@@ -295,7 +295,7 @@ export default function Footer() {
                       Full-stack and AI software built for teams that move fast.
                     </h2>
                     <p className="mt-5 text-base sm:text-lg text-secondary/70 max-w-xl leading-relaxed">
-                      We design, build, and scale modern products—from MVPs to enterprise platforms.
+                      We design, build, and scale modern products, from MVPs to enterprise platforms.
                       Explore our work or tell us what you want to ship next.
                     </p>
                   </div>
@@ -496,10 +496,11 @@ export default function Footer() {
             </div>
           </div>
           <div className="mt-0 lg:mt-12 flex flex-col sm:flex-row items-center justify-center mx-5 sm:mx-10 lg:mx-16 gap-4 border-t border-secondary/20 py-2 text-center text-sm text-secondary/60">
-            <span>© {new Date().getFullYear()} Xandec. All rights reserved.</span>
+            <span>(c) {new Date().getFullYear()} Xandec. All rights reserved.</span>
           </div>
         </div>
       </div>
     </footer>
   );
 }
+

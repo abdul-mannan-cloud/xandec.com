@@ -47,7 +47,7 @@ function ClientFeedback() {
             customVariants={revealVariants}
             timelineRef={testimonialRef}
           >
-            Here’s what clients say about working with Xandec.
+            Here's what clients say about working with Xandec.
           </TimelineContent>
         </article>
         <div className="lg:grid lg:grid-cols-3  gap-2 flex flex-col w-full lg:py-10 pt-10 pb-4 lg:px-10 px-4">
@@ -56,7 +56,7 @@ function ClientFeedback() {
               <div className="absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:50px_56px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]"></div>
               <article className="mt-auto">
                 <p>
-                  " It was great working with Xandec. They’re very dedicated and
+                  " It was great working with Xandec. They're very dedicated and
                   really persevere through challenges until the job gets done.
                   Their JavaScript knowledge is solid, and they consistently
                   stay focused on the project goals."
@@ -130,7 +130,7 @@ function ClientFeedback() {
             <TimelineContent animationNum={3} customVariants={revealVariants} timelineRef={testimonialRef} className="flex flex-col justify-between relative bg-primary text-white overflow-hidden rounded-lg border border-gray-200 p-5">
               <article className="mt-auto">
                 <p className="2xl:text-base text-sm">
-                  "Xandec helped us build products for GNTC, and we’re extremely
+                  "Xandec helped us build products for GNTC, and we're extremely
                   satisfied with the results."
                 </p>
                 <div className="flex justify-between items-end pt-5">
@@ -202,7 +202,7 @@ function ClientFeedback() {
                   the entire mobile app development process with professionalism
                   and efficiency, from design and implementation to publishing
                   on the App Store and Play Store. Communication was clear, and
-                  they were always proactive in resolving issues. I’d be happy
+                  they were always proactive in resolving issues. I'd be happy
                   to work with them again on future projects."
                 </p>
                 <div className="flex justify-between pt-5">
@@ -242,3 +242,4 @@ function ClientFeedback() {
 }
 
 export default ClientFeedback
+

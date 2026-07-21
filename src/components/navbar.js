@@ -11,15 +11,16 @@ export const Navbar = ({ navItems, className, ctaLabel = "Book a Call" }) => {
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const pathname = usePathname();
   const isAbout = pathname === "/about";
-  const isIslandMode = isAbout || !isHero;
+  const isCaseStudy = pathname?.startsWith("/case-studies");
+  const isIslandMode = isAbout || isCaseStudy || !isHero;
   const resolveHref = (href) => {
     if (!href.startsWith("#")) return href;
     return pathname === "/" ? href : `/${href}`;
   };
-  const heroTextClass = isAbout ? "text-primary" : "text-secondary";
-  const heroMutedClass = isAbout ? "text-primary/80" : "text-secondary/80";
-  const heroUnderlineClass = isAbout ? "bg-primary/80" : "bg-secondary/80";
-  const heroCtaClass = isAbout
+  const islandTextClass = isAbout || isCaseStudy ? "text-primary" : "text-secondary";
+  const islandMutedClass = isAbout || isCaseStudy ? "text-primary/80" : "text-secondary/80";
+  const islandUnderlineClass = isAbout || isCaseStudy ? "bg-primary/80" : "bg-secondary/80";
+  const islandCtaClass = isAbout || isCaseStudy
     ? "border-primary/30 text-primary hover:border-primary hover:bg-primary/10"
     : "border-secondary/30 text-secondary hover:border-secondary hover:bg-secondary/10";
 
@@ -79,7 +80,7 @@ export const Navbar = ({ navItems, className, ctaLabel = "Book a Call" }) => {
             href="/"
             className={cn(
               "tracking-[0.2em]",
-              isIslandMode ? "text-secondary" : heroTextClass,
+              isIslandMode ? "text-secondary" : islandTextClass,
               isHero ? "text-xl sm:text-3xl" : "text-lg sm:text-2xl"
             )}
             style={{ fontFamily: "var(--font-anton)" }}
@@ -103,7 +104,7 @@ export const Navbar = ({ navItems, className, ctaLabel = "Book a Call" }) => {
                 href={resolveHref(navItem.link)}
                 className={cn(
                   "group relative transition-colors",
-                  isIslandMode ? "text-secondary/80" : heroMutedClass,
+                  isIslandMode ? "text-secondary/80" : islandMutedClass,
                   "hover:text-secondary"
                 )}
               >
@@ -111,7 +112,7 @@ export const Navbar = ({ navItems, className, ctaLabel = "Book a Call" }) => {
                 <span
                   className={cn(
                     "pointer-events-none absolute -bottom-1 left-0 h-[2px] w-full origin-left scale-x-0 transition-transform duration-300 group-hover:scale-x-100",
-                    isIslandMode ? "bg-secondary/80" : heroUnderlineClass
+                    isIslandMode ? "bg-secondary/80" : islandUnderlineClass
                   )}
                 />
               </Link>
@@ -122,7 +123,7 @@ export const Navbar = ({ navItems, className, ctaLabel = "Book a Call" }) => {
             href={resolveHref("#contact")}
             className={cn(
               "rounded-full border px-4 py-2 text-sm sm:text-base font-semibold transition",
-              isIslandMode ? "border-secondary/30 text-secondary hover:border-secondary hover:bg-secondary/10" : heroCtaClass
+              isIslandMode ? "border-secondary/30 text-secondary hover:border-secondary hover:bg-secondary/10" : islandCtaClass
             )}
           >
             {ctaLabel}
@@ -134,12 +135,12 @@ export const Navbar = ({ navItems, className, ctaLabel = "Book a Call" }) => {
           aria-label={isMobileOpen ? "Close menu" : "Open menu"}
           aria-expanded={isMobileOpen}
           onClick={() => setIsMobileOpen((open) => !open)}
-          className={cn(
-            "flex flex-col items-center justify-center rounded-full border px-3 py-2 text-sm font-semibold transition sm:hidden",
-            isIslandMode
+            className={cn(
+              "flex flex-col items-center justify-center rounded-full border px-3 py-2 text-sm font-semibold transition sm:hidden",
+              isIslandMode
               ? "border-secondary/30 text-secondary hover:border-secondary hover:bg-secondary/10"
-              : heroCtaClass
-          )}
+              : islandCtaClass
+            )}
         >
           <span className="sr-only">Toggle menu</span>
           <span className="block h-[2px] w-5 bg-current" />
@@ -159,9 +160,9 @@ export const Navbar = ({ navItems, className, ctaLabel = "Book a Call" }) => {
               key={navItem.name}
               href={resolveHref(navItem.link)}
               onClick={() => setIsMobileOpen(false)}
-              className={cn(
-                "text-base font-medium transition-colors",
-                isIslandMode ? "text-secondary/80" : heroMutedClass,
+            className={cn(
+              "text-base font-medium transition-colors",
+                isIslandMode ? "text-secondary/80" : islandMutedClass,
                 "hover:text-secondary"
               )}
             >
@@ -176,7 +177,7 @@ export const Navbar = ({ navItems, className, ctaLabel = "Book a Call" }) => {
               "rounded-full border px-4 py-2 text-center text-sm font-semibold transition",
               isIslandMode
                 ? "border-secondary/30 text-secondary hover:border-secondary hover:bg-secondary/10"
-                : heroCtaClass
+                : islandCtaClass
             )}
           >
             {ctaLabel}
